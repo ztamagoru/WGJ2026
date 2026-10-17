@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c6vn8s8jty3g0"
+path="res://.godot/imported/fantasma.dialogue-2913c8d78d374cf1fe706d86d114c773.tres"
+
+[deps]
+
+source_file="res://dialogue/fantasma.dialogue"
+dest_files=["res://.godot/imported/fantasma.dialogue-2913c8d78d374cf1fe706d86d114c773.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,68 @@
+~ start
+Fue difícil encontrar la dirección de sus ojos. Aunque cuando los encontré, me distraje con el tambaleo de sus manos que comenzó de manera repentina. 
+Fantasma: U-Uh! Disculpa, no quería meterme en tu paso. 
+Fantasma: ¿Qué? ¿Qué querés hablar conmigo? 
+El extraño comenzó a jugar con sus manos, intentando calmarse.
+Fantasma: Porfavor no preguntes sobre mi nombre, me gusta estar de incógnito aquí. 
+=> END
+
+~ question_costume
+Fantasma: Te he dicho… Me gusta estar de incógnito aquí.
+Fantasma: Un lugar donde nadie te conoce… por fin puedo interactuar sin miedo.
+Fantasma: A-Aunque me cueste..
+=> END
+
+~ question_personal
+Fantasma: ...
+Fantasma: U-uh.. que insistente eres..
+Fantasma: Me llamo *NOMBRE*.
+Fantasma: Yo pen´se que era buena idea venir aquí y conocer amigos nuevos.
+Fantasma: Pero c-creo que soy muy tímido para esto.
+El fantasma se frota los ojos con sus manos temblorosas
+=> END
+
+~ question_fantasma
+Fantasma: Me estás preguntando sobre... mi?!
+Fantasma: Disculpá, sinceramente no creo tener mucho para decir...
+Fantasma: Se que esta fiesta está llena de personajes, pero no soy tan especial.
+=> post_question
+
+~ question_gymbro
+=> post_question
+
+~ question_otaku
+=> post_question
+
+~ question_killer
+=> post_question
+
+~ question_alien
+=> post_question
+
+~ post_question
+=> END
+
+~ investigation_wine
+Fantasma: Pensaba que el alcohol iba a relajarme más.. 
+Fantasma: Pero ahora estoy peor porque estoy nervioso pensando lo que hago borracho
+Se intenta tapar la mancha con la mano 
+=> END
+
+~ investigation_book
+Fantasma: A-aveces tartamudeo tanto que la gente no me entiende y..
+Fantasma: Debo anotar las cosas que quiero decir
+Abre su libreta y escribe en su primera pagina un “Hola!”
+Fantasma: C-Contigo no hubo falta de usarlo…
+=> END
+
+~ accusation_correct
+=> END
+
+~ accusation_incorrect
+=> END
+
+~ chosen
+=> END
+
+~ rejected
+=> END

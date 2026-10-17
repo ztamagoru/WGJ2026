@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8xtn12qofqb6"]
 
-[ext_resource type="PackedScene" uid="uid://dburscjxprsnm" path="res://scenes/dialogue/characters/jorge.tscn" id="1_25r3k"]
+[ext_resource type="Script" uid="uid://dc51itr02ynop" path="res://scenes/investigation_screen.gd" id="1_nijwt"]
+[ext_resource type="PackedScene" uid="uid://llc1x0csxgm7" path="res://scenes/dialogue/characters/principe.tscn" id="2_nijwt"]
 
 [node name="InvestigationScreen" type="Control" unique_id=2057247766]
 layout_mode = 3
@@ -9,13 +10,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Portrait" parent="." unique_id=1572422149 instance=ExtResource("1_25r3k")]
-position = Vector2(340, 483)
-scale = Vector2(1.9155535, 1.9155535)
+mouse_filter = 2
+script = ExtResource("1_nijwt")
 
 [node name="Button" type="Button" parent="." unique_id=2052880360]
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 31.0
 text = "X"
+
+[node name="PortraitHolder" type="Marker2D" parent="." unique_id=1024724931]
+position = Vector2(320, 480)
+scale = Vector2(5, 5)
+
+[node name="Portrait" parent="PortraitHolder" unique_id=1572422149 instance=ExtResource("2_nijwt")]

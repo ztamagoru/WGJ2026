@@ -1,0 +1,52 @@
+~ start
+=> END
+
+~ question_costume
+=> END
+
+~ question_personal
+=> END
+
+# -- Preguntas personajes --
+
+~ question_fantasma
+=> post_question
+
+~ question_gymbro
+=> post_question
+
+~ question_otaku
+=> post_question
+
+~ question_killer
+=> post_question
+
+~ question_alien
+=> post_question
+
+~ post_question
+=> END
+
+# -- Investigación objetos --
+# Añadir objetos que tiene el personaje, acá uso el fantasma como referencia
+# que solo tiene la mancha de vino y el libro negro
+
+~ investigation_wine
+=> END
+
+~ investigation_book
+=> END
+
+# -- Acusaciones --
+
+~ accusation_correct
+=> END
+
+~ accusation_incorrect
+=> END
+
+~ chosen
+=> END
+
+~ rejected
+=> END
