@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://csildgtravgrj"]
+
+[ext_resource type="PackedScene" uid="uid://cg1w2tb3u8p72" path="res://assets/scenery/Outside.blend" id="1_hvyp7"]
+[ext_resource type="Texture2D" uid="uid://b1pdekkfi44ju" path="res://assets/4o7yfp-1729700107.png" id="2_khmk6"]
+[ext_resource type="Texture2D" uid="uid://qjdm7t5eql2l" path="res://assets/Circle.png" id="3_rjw42"]
+[ext_resource type="Texture2D" uid="uid://bcno4wsynyy8d" path="res://assets/Nena.png" id="4_xuijp"]
+[ext_resource type="PackedScene" uid="uid://dptvf8ccikbas" path="res://scenes/dialogue/balloon/balloon.tscn" id="5_rjw42"]
+[ext_resource type="Resource" uid="uid://bglkiu08rjy4j" path="res://test.dialogue" id="6_xuijp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rjw42"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xuijp"]
+sky_material = SubResource("ProceduralSkyMaterial_rjw42")
+
+[sub_resource type="Environment" id="Environment_tkx72"]
+background_mode = 2
+sky = SubResource("Sky_xuijp")
+glow_enabled = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbwj1"]
+atlas = ExtResource("4_xuijp")
+region = Rect2(0, 0, 887, 887)
+
+[node name="Scenery" type="Node3D" unique_id=623291719]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=95842444]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=71922440]
+environment = SubResource("Environment_tkx72")
+
+[node name="Outside" parent="." unique_id=2038920689 instance=ExtResource("1_hvyp7")]
+
+[node name="Actor" type="Node3D" parent="." unique_id=1021275544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.7632217)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor" unique_id=565941676]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor" unique_id=1898801403]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor2" type="Node3D" parent="." unique_id=459974980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9608135)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor2" unique_id=233915098]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor2" unique_id=609922063]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor3" type="Node3D" parent="." unique_id=325194578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0065887, 0, 1.9524446)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor3" unique_id=1376943341]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor3" unique_id=258426090]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor4" type="Node3D" parent="." unique_id=1450032782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0065887, 0, 4.1500363)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor4" unique_id=453398301]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor4" unique_id=1719649750]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor5" type="Node3D" parent="." unique_id=1744105398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.283863, 0, -1.449451)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor5" unique_id=1650263599]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor5" unique_id=1979826019]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor6" type="Node3D" parent="." unique_id=236507600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.283863, 0, 0.7481408)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor6" unique_id=1546665746]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor6" unique_id=78023159]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor7" type="Node3D" parent="." unique_id=547859040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6674385, 0, 1.8110523)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor7" unique_id=1940076079]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor7" unique_id=1655195414]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor8" type="Node3D" parent="." unique_id=1815500956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6674385, 0, 4.008644)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor8" unique_id=685276549]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor8" unique_id=538160574]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor9" type="Node3D" parent="." unique_id=786404851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.454129, 0, -1.6894898)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor9" unique_id=458332787]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor9" unique_id=1878683392]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor10" type="Node3D" parent="." unique_id=520486934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.454129, 0, 0.50810194)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor10" unique_id=48490675]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor10" unique_id=629402118]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor11" type="Node3D" parent="." unique_id=1422065029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.573237, 0, -4.25884)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor11" unique_id=180838213]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor11" unique_id=1106072518]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor12" type="Node3D" parent="." unique_id=1847290910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.573237, 0, -2.0612483)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor12" unique_id=932529523]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor12" unique_id=1147051416]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor13" type="Node3D" parent="." unique_id=1967076091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48680735, -4.7683716e-07, -5.5823226)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor13" unique_id=307778359]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor13" unique_id=1336764787]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor14" type="Node3D" parent="." unique_id=208593054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48680735, -4.7683716e-07, -3.3847308)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor14" unique_id=73845355]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor14" unique_id=2006071784]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor15" type="Node3D" parent="." unique_id=860145205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8699393, -1.4305115e-06, -4.225554)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor15" unique_id=1475123335]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0.6482179, 0)
+texture = ExtResource("2_khmk6")
+
+[node name="Decal" type="Decal" parent="Actor15" unique_id=1305518495]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Actor16" type="Node3D" parent="." unique_id=2115625374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8699393, -1.4305115e-06, -2.0279622)
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor16" unique_id=782062909]
+transform = Transform3D(0.13921626, 0, 0, 0, 0.13921626, 0, 0, 0, 0.18, -0.22339126, 0.5817386, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor16" unique_id=611147160]
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("3_rjw42")
+modulate = Color(1, 1, 1, 0.4627451)
+upper_fade = 48.94314
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2015678937]
+transform = Transform3D(0.9995599, -0.012537502, 0.026886746, 0, 0.9063077, 0.42261842, -0.029666245, -0.42243242, 0.9059088, 0.289, 6.5, 15)
+fov = 30.0
+
+[node name="ExampleBalloon" parent="." unique_id=38036521 instance=ExtResource("5_rjw42")]
+dialogue_resource = ExtResource("6_xuijp")
+auto_start = true

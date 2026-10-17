@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cucco71t3c7wg"]
+
+[node name="Portrait" type="Node2D" unique_id=1572422149]
+
+[node name="Anchor" type="Marker2D" parent="." unique_id=1904954016]
+
+[node name="Body" type="Sprite2D" parent="Anchor" unique_id=145401990]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1082413760]

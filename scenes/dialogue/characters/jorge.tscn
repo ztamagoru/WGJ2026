@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dburscjxprsnm"]
+
+[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://scenes/dialogue/characters/portrait.tscn" id="1_0ufyn"]
+[ext_resource type="Texture2D" uid="uid://b1pdekkfi44ju" path="res://assets/4o7yfp-1729700107.png" id="2_f5ncs"]
+
+[node name="Portrait" unique_id=1572422149 instance=ExtResource("1_0ufyn")]
+
+[node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
+position = Vector2(0, -119.99999)
+scale = Vector2(0.29334196, 0.29334196)
+texture = ExtResource("2_f5ncs")
