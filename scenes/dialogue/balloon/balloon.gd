@@ -180,7 +180,7 @@ func next(next_id: String) -> void:
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
 		will_hide_balloon = false
-		balloon.hide()
+		#balloon.hide()
 
 
 func _on_mutated(mutation: Dictionary) -> void:

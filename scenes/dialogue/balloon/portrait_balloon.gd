@@ -34,6 +34,7 @@ func add_character(character_name : String, slot_index : int) -> void:
 	
 	var tween : Tween = create_tween()
 	tween.tween_property(character, "modulate:a", 1, 0.5).from(0)
+	await tween.finished
 	
 	characters[character_name] = character
 
@@ -41,6 +42,10 @@ func remove_character(character_name : String) -> void:
 	if not characters.has(character_name): return
 	
 	var character : Node2D = characters.get(character_name)
-	character.queue_free()
 	
-	characters.erase(character)
+	var tween : Tween = create_tween()
+	tween.tween_property(character, "modulate:a", 0, 0.5).from(1)
+	await tween.finished
+	
+	character.queue_free()
+	characters.erase(character_name)
