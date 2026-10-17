@@ -125,15 +125,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="ColorRect" type="ColorRect" parent="Balloon" unique_id=1205197179]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.59607846)
-
 [node name="Stage" type="Control" parent="Balloon" unique_id=1693137762]
 layout_mode = 1
 anchors_preset = 10

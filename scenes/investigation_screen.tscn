@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b8xtn12qofqb6"]
+
+[ext_resource type="PackedScene" uid="uid://dburscjxprsnm" path="res://scenes/dialogue/characters/jorge.tscn" id="1_25r3k"]
+
+[node name="InvestigationScreen" type="Control" unique_id=2057247766]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Portrait" parent="." unique_id=1572422149 instance=ExtResource("1_25r3k")]
+position = Vector2(340, 483)
+scale = Vector2(1.9155535, 1.9155535)
+
+[node name="Button" type="Button" parent="." unique_id=2052880360]
+layout_mode = 1
+offset_right = 18.0
+offset_bottom = 31.0
+text = "X"
