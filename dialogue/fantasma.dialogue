@@ -43,9 +43,9 @@ Fantasma: Se que esta fiesta está llena de personajes, pero no soy tan especial
 => END
 
 ~ investigation_wine
-Fantasma: Pensaba que el alcohol iba a relajarme más.. 
-Fantasma: Pero ahora estoy peor porque estoy nervioso pensando lo que hago borracho
-Se intenta tapar la mancha con la mano 
+Principe: ¿Eso? ¡Eso es una simple y normal mancha de vino!
+Principe: Puede que mi aparencia regal no lo aparente, pero verdaderamente soy un poco descuidado...
+Principe: Me choqué con dos fulanitos que, francamente, son pequeños pobrecitos comparados con mi presencia.
 => END
 
 ~ investigation_book

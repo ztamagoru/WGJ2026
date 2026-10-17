@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b8xtn12qofqb6"]
 
 [ext_resource type="Script" uid="uid://dc51itr02ynop" path="res://scenes/investigation_screen.gd" id="1_nijwt"]
-[ext_resource type="PackedScene" uid="uid://llc1x0csxgm7" path="res://scenes/dialogue/characters/principe.tscn" id="2_nijwt"]
 
 [node name="InvestigationScreen" type="Control" unique_id=2057247766]
 layout_mode = 3
@@ -13,7 +12,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_nijwt")
 
-[node name="Button" type="Button" parent="." unique_id=2052880360]
+[node name="Exit" type="Button" parent="." unique_id=2052880360]
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 31.0
@@ -23,4 +22,18 @@ text = "X"
 position = Vector2(320, 480)
 scale = Vector2(5, 5)
 
-[node name="Portrait" parent="PortraitHolder" unique_id=1572422149 instance=ExtResource("2_nijwt")]
+[node name="Question" type="Button" parent="." unique_id=253007123]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "¡Cuestionar!"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

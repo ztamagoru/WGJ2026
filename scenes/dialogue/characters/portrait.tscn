@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cucco71t3c7wg"]
 
+[ext_resource type="Script" uid="uid://bhw4piuqyxydv" path="res://scenes/dialogue/characters/portrait.gd" id="1_38aog"]
+
 [node name="Portrait" type="Node2D" unique_id=1572422149]
+script = ExtResource("1_38aog")
 
 [node name="Anchor" type="Marker2D" parent="." unique_id=1904954016]
 

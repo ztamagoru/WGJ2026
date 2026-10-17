@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BachelorResource" format=3 uid="uid://dd75brqngsa8i"]
+
+[ext_resource type="Resource" uid="uid://c6vn8s8jty3g0" path="res://dialogue/fantasma.dialogue" id="1_47sin"]
+[ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="1_bjcdg"]
+[ext_resource type="PackedScene" uid="uid://llc1x0csxgm7" path="res://scenes/dialogue/characters/principe.tscn" id="2_y8sbj"]
+
+[resource]
+script = ExtResource("1_bjcdg")
+id = &"principe"
+name = "Principe"
+portrait = ExtResource("2_y8sbj")
+dialogue = ExtResource("1_47sin")
+metadata/_custom_type_script = "uid://boq17sd0ydkdh"

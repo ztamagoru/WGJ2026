@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://dhq8fcawbelgp"]
 
-[ext_resource type="PackedScene" uid="uid://dburscjxprsnm" path="res://scenes/dialogue/characters/jorge.tscn" id="1_rd2jb"]
+[ext_resource type="Script" uid="uid://dp0eaerg301uw" path="res://scenes/decision_screen.gd" id="1_m610q"]
+[ext_resource type="PackedScene" uid="uid://b8xtn12qofqb6" path="res://scenes/investigation_screen.tscn" id="1_rd2jb"]
 
 [node name="DecisionScreen" type="CanvasLayer" unique_id=920126564]
+script = ExtResource("1_m610q")
 
-[node name="Control" type="Control" parent="." unique_id=2079899259]
+[node name="Screen" type="Control" parent="." unique_id=2079899259]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1174776350]
+[node name="ColorRect" type="ColorRect" parent="Screen" unique_id=1174776350]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,22 +24,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.23529412)
 
-[node name="Stage" type="Control" parent="Control" unique_id=177943180]
+[node name="Stage" type="Control" parent="Screen" unique_id=177943180]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 276.0
 grow_horizontal = 2
 
-[node name="Slot0" type="Marker2D" parent="Control/Stage" unique_id=1130708962]
-position = Vector2(213.333, 276)
+[node name="Slot0" type="Marker2D" parent="Screen/Stage" unique_id=1130708962]
+position = Vector2(320, 276)
 
-[node name="Portrait" parent="Control/Stage/Slot0" unique_id=1572422149 instance=ExtResource("1_rd2jb")]
-
-[node name="Slot1" type="Marker2D" parent="Control/Stage" unique_id=1326980581]
-position = Vector2(426.666, 276)
-
-[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=453062493]
+[node name="MarginContainer" type="MarginContainer" parent="Screen" unique_id=453062493]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -50,26 +48,35 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1936392699]
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/MarginContainer" unique_id=1936392699]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="Button" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=2120506146]
+[node name="Ask" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=2120506146]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Preguntar"
 
-[node name="Button2" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=226270700]
+[node name="Investigate" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=226270700]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Investigar"
 
-[node name="Button3" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=1538632258]
+[node name="Choose" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=1538632258]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Aceptar"
 
-[node name="Button4" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=85347534]
+[node name="Reject" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=85347534]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Rechazar"
+
+[node name="InvestigationScreen" parent="." unique_id=2057247766 instance=ExtResource("1_rd2jb")]
+visible = false
+
+[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Ask" to="." method="_on_ask_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Investigate" to="." method="_on_investigate_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Choose" to="." method="_on_choose_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Reject" to="." method="_on_reject_pressed"]
+[connection signal="exited" from="InvestigationScreen" to="." method="_on_investigation_screen_exited"]

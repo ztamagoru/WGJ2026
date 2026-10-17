@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b1pdekkfi44ju" path="res://assets/4o7yfp-1729700107.png" id="2_khmk6"]
 [ext_resource type="Texture2D" uid="uid://qjdm7t5eql2l" path="res://assets/Circle.png" id="3_rjw42"]
 [ext_resource type="Texture2D" uid="uid://bcno4wsynyy8d" path="res://assets/Nena.png" id="4_xuijp"]
-[ext_resource type="PackedScene" uid="uid://dhq8fcawbelgp" path="res://scenes/decision_screen.tscn" id="5_cekha"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rjw42"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -244,7 +243,5 @@ modulate = Color(1, 1, 1, 0.4627451)
 upper_fade = 48.94314
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2015678937]
-transform = Transform3D(0.9995599, -0.012537502, 0.026886746, 0, 0.9063077, 0.42261842, -0.029666245, -0.42243242, 0.9059088, 0.289, 6.5, 15)
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261833, 0, -0.42261833, 0.90630776, 0, 6.5, 15)
 fov = 30.0
-
-[node name="DecisionScreen" parent="." unique_id=920126564 instance=ExtResource("5_cekha")]

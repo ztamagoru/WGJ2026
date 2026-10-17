@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://nmhxhd6c65w1"]
+
+[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://scenes/dialogue/characters/portrait.tscn" id="1_pnygo"]
+[ext_resource type="Texture2D" uid="uid://cdd656e4tfck5" path="res://assets/f.png" id="2_ynshg"]
+[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_tlv3q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3fvi3"]
+radius = 75.3
+
+[node name="Portrait" unique_id=1572422149 node_paths=PackedStringArray("clues") instance=ExtResource("1_pnygo")]
+clues = [NodePath("Anchor/Body/Clue")]
+
+[node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
+position = Vector2(0, -104)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ynshg")
+
+[node name="Clue" type="Area2D" parent="Anchor/Body" index="0" unique_id=1992322033]
+position = Vector2(-3.8146973e-06, -44.999985)
+script = ExtResource("3_tlv3q")
+clue_name = &"wine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue" index="0" unique_id=1103100495]
+shape = SubResource("CircleShape2D_3fvi3")

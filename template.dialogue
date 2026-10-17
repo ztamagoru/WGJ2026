@@ -37,6 +37,18 @@
 ~ investigation_book
 => END
 
+~ investigation_phone
+=> END
+
+~ investigation_fingers
+=> END
+
+~ investigation_lenses
+=> END
+
+~ investigation_glow
+=> END
+
 # -- Acusaciones --
 
 ~ accusation_correct
