@@ -53,29 +53,59 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Screen/MarginContainer" unique_id=1936392699]
+[node name="InitialQuestions" type="HBoxContainer" parent="Screen/MarginContainer" unique_id=1936392699]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="Ask" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=2120506146]
+[node name="Ask" type="Button" parent="Screen/MarginContainer/InitialQuestions" unique_id=2120506146]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Preguntar"
 
-[node name="Investigate" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=226270700]
+[node name="Investigate" type="Button" parent="Screen/MarginContainer/InitialQuestions" unique_id=226270700]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Investigar"
 
-[node name="Choose" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=1538632258]
+[node name="Choose" type="Button" parent="Screen/MarginContainer/InitialQuestions" unique_id=1538632258]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Aceptar"
 
-[node name="Reject" type="Button" parent="Screen/MarginContainer/HBoxContainer" unique_id=85347534]
+[node name="Reject" type="Button" parent="Screen/MarginContainer/InitialQuestions" unique_id=85347534]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Rechazar"
+
+[node name="SpecificQuestions" type="HBoxContainer" parent="Screen/MarginContainer" unique_id=1174748193]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="AskCostume" type="Button" parent="Screen/MarginContainer/SpecificQuestions" unique_id=1171612452]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Disfraz"
+
+[node name="AskLife" type="Button" parent="Screen/MarginContainer/SpecificQuestions" unique_id=1268383322]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Su vida"
+
+[node name="AskSomeoneElse" type="Button" parent="Screen/MarginContainer/SpecificQuestions" unique_id=1407995980]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Alguien más"
+
+[node name="Back" type="Button" parent="Screen/MarginContainer/SpecificQuestions" unique_id=450687820]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Atrás"
+
+[node name="CharacterQuestions" type="GridContainer" parent="Screen/MarginContainer" unique_id=30298342]
+visible = false
+layout_mode = 2
+columns = 3
 
 [node name="InvestigationScreen" parent="." unique_id=2057247766 instance=ExtResource("1_rd2jb")]
 visible = false
@@ -168,8 +198,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = ">"
 
-[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Ask" to="." method="_on_ask_pressed"]
-[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Investigate" to="." method="_on_investigate_pressed"]
-[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Choose" to="." method="_on_choose_pressed"]
-[connection signal="pressed" from="Screen/MarginContainer/HBoxContainer/Reject" to="." method="_on_reject_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/InitialQuestions/Ask" to="." method="_on_ask_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/InitialQuestions/Investigate" to="." method="_on_investigate_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/InitialQuestions/Choose" to="." method="_on_choose_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/InitialQuestions/Reject" to="." method="_on_reject_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/SpecificQuestions/AskSomeoneElse" to="." method="_on_ask_someone_else_pressed"]
+[connection signal="pressed" from="Screen/MarginContainer/SpecificQuestions/Back" to="." method="_on_back_pressed"]
 [connection signal="exited" from="InvestigationScreen" to="." method="_on_investigation_screen_exited"]
