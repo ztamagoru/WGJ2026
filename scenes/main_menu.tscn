@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://347r70wofxb1" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bp72arq8ovhqa" path="res://assets/ui/bg_menu.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://crgn1h50ypk8v" path="res://assets/corazon_blanco.png" id="3_bqqt6"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1170951883]
 script = ExtResource("1_l6cm7")
@@ -25,6 +26,19 @@ offset_top = -500.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_ekxnf")
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=599884108]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -251.0
+offset_top = 20.0
+offset_right = -58.0
+offset_bottom = 213.0
+grow_horizontal = 0
+texture = ExtResource("3_bqqt6")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1820948139]
 layout_mode = 1
