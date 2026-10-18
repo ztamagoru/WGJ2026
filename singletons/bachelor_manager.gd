@@ -9,9 +9,7 @@ signal bachelor_finished()
 
 # --
 
-const GOOD_ENDING_SCENE : String = "res://scenes/endings/good_ending.tscn"
-const BAD_ENDING_SCENE : String = "res://scenes/endings/bad_ending.tscn"
-const ALONE_ENDING_SCENE : String = "res://scenes/endings/alone_ending.tscn"
+const ENDING_SCENE : String = "res://scenes/endings/ending.tscn"
 
 const BACHELORS_PATH : String = "res://resources/bachelors/"
 
@@ -74,14 +72,16 @@ func start_speed_dating() -> void:
 	
 	
 	bachelors = all_bachelors.duplicate()
+	
+	print("ANTES: ", bachelors.map(func(b): return b.id))
 	bachelors.shuffle()
+	print("DESPUÉS: ", bachelors.map(func(b): return b.id))
 	
 	speed_dating_started.emit()
 	_set_new_bachelor()
 
 func reject_bachelor() -> void:
 	if current_bachelor == null: return
-	
 	
 	bachelor_finished.emit()
 	current_bachelor = null
@@ -92,7 +92,7 @@ func reject_bachelor() -> void:
 			push_error("BACHELOR MANAGER: GameManager not assigned.")
 			return
 		
-		scene_manager.change_scene(ALONE_ENDING_SCENE)
+		scene_manager.change_scene(ENDING_SCENE)
 		return
 	
 	_set_new_bachelor()
@@ -104,15 +104,13 @@ func accept_bachelor() -> void:
 		push_error("BACHELOR MANAGER: GameManager not assigned.")
 		return
 	
-	if current_bachelor.is_good_bachelor: scene_manager.change_scene(GOOD_ENDING_SCENE)
-	else: scene_manager.change_scene(BAD_ENDING_SCENE)
-	return 
+	scene_manager.change_scene(ENDING_SCENE)
 
 # --
 
 func _bachelor_interaction(_resource : DialogueResource) -> void:
 	if current_bachelor == null: return
-	if bachelors.size() == 1: return
+	if bachelors.size() < 2: return
 	
 	remaining_interactions -= 1
 	if remaining_interactions == 0: _get_next_bachelor()
@@ -123,6 +121,7 @@ func _get_next_bachelor() -> void:
 	bachelor_finished.emit()
 	
 	current_bachelor = null
+	
 	
 	var finished_bachelor: BachelorResource = bachelors.pop_front()
 	bachelors.push_back(finished_bachelor)

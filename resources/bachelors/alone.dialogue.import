@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://xwjruwugaua6"
+path="res://.godot/imported/alone.dialogue-96a49848f9e43772aa8f9692329aa61e.tres"
+
+[deps]
+
+source_file="res://resources/bachelors/alone.dialogue"
+dest_files=["res://.godot/imported/alone.dialogue-96a49848f9e43772aa8f9692329aa61e.tres"]
+
+[params]
+
+defaults=true

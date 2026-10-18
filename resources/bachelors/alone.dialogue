@@ -1,0 +1,7 @@
+~ start
+Rechazaste su última propuesta y te alejaste del muchacho.
+Por un momento, la música de la fiesta pareció bajar de volumen.
+Habías hablado con {{str(BachelorManager.all_bachelors.size())}} hombres esa noche. {{str(BachelorManager.all_bachelors.size())}} hombres que, por distintos motivos, probablemente necesitaban ayuda profesional.
+Y ninguno había sido de tu agrado.
+Bueno, al menos habías conocido gente nueva.
+=> END

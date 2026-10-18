@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cmv3pi6a1qf2a"]
+
+[ext_resource type="Script" uid="uid://bm40nilamx11y" path="res://scenes/endings/ending.gd" id="1_s7omi"]
+
+[node name="Ending" type="Node" unique_id=232696078]
+script = ExtResource("1_s7omi")
+metadata/_custom_type_script = "uid://bm40nilamx11y"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=900115320]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1024413095]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=1715291400]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="EndingIllustration" type="TextureRect" parent="CanvasLayer/Control" unique_id=650380941]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3

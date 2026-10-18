@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bd14nnc3uc0f7"]
 
 [ext_resource type="Script" uid="uid://6k8tqoyao23b" path="res://scenes/scene_manager.gd" id="1_we8k5"]
+[ext_resource type="Texture2D" uid="uid://drbva24ykiaks" path="res://assets/ui/loading.png" id="2_65mdo"]
 
-[node name="SceneManager" type="Node3D" unique_id=25115302 node_paths=PackedStringArray("current_scene", "fade_layer")]
+[node name="SceneManager" type="Node3D" unique_id=25115302 node_paths=PackedStringArray("current_scene", "fade_layer", "fade_loading_icon")]
 script = ExtResource("1_we8k5")
 main_menu = "res://scenes/main_menu.tscn"
 current_scene = NodePath("CurrentScene")
 fade_layer = NodePath("CanvasLayer/ColorRect")
+fade_loading_icon = NodePath("CanvasLayer/TextureRect")
 
 [node name="CurrentScene" type="Node3D" parent="." unique_id=1858770280]
 
@@ -21,3 +23,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=705465837]
+modulate = Color(1, 1, 1, 0)
+offset_left = 557.0
+offset_top = 402.0
+offset_right = 597.0
+offset_bottom = 442.0
+pivot_offset = Vector2(20, 20)
+offset_transform_position = Vector2(-20, -20)
+texture = ExtResource("2_65mdo")
+expand_mode = 1

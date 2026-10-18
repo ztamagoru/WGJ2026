@@ -98,8 +98,7 @@ Yakob: Deja de decir tantas pavadas.
 Al finalizar la fiesta, te llevo caminando por largas cuadras hacia un bosque. 
 Donde allí caminaste y caminaste para conocer a su familia…que resultó siendo.. ¿una manada de lobos? 
 Se acercaron y ¡PUM! de un mordisco te comieron viva.
-Fuiste la cena esa noche. 
-$> BachelorManager.accept_bachelor()
+Fuiste la cena esa noche.
 => END
 
 ~ rejected

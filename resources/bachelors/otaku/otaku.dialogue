@@ -95,7 +95,6 @@ Kura: No entiendo lo que dices. ¿Te pusieron algo en la bebida?
 Esa noche él te preguntó tu nombre y con una mirada de maldad lo anotó en su cuaderno.
 No pasó nada. Y él molesto, te ignoró. 
 Terminaste en su casa, con su mamá sola tomando café 
-$> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected

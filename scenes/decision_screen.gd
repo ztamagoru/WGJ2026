@@ -105,7 +105,7 @@ func _on_investigate_pressed() -> void:
 
 
 func _on_choose_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(BachelorManager.current_bachelor.dialogue, "rejected")
+	BachelorManager.accept_bachelor()
 
 
 func _on_reject_pressed() -> void:
