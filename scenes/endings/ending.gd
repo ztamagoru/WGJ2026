@@ -47,17 +47,18 @@ func show_ending():
 		else: ending_type = EndingType.BAD
 	
 	match ending_type:
-		EndingType.GOOD: 
-			current_image = good_ending_texture
-			_show_ending()
-		
-		EndingType.BAD:
-			current_image = bad_ending_texture
-			_show_ending()
-		
 		EndingType.ALONE:
 			current_image = alone_ending_texture
 			_show_alone_ending()
+			return
+		
+		EndingType.GOOD: 
+			current_image = good_ending_texture
+		
+		EndingType.BAD:
+			current_image = bad_ending_texture
+	
+	_show_ending()
 
 # --
 
