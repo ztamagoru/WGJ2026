@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://llc1x0csxgm7"]
+
+[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_wfvv2"]
+[ext_resource type="Texture2D" uid="uid://dhcemk575gb6o" path="res://assets/bachelors/princep_solo.png" id="2_weptq"]
+[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_onh2c"]
+[ext_resource type="Texture2D" uid="uid://cmnfg228bqo06" path="res://assets/bachelors/cabeza_1.png" id="4_v2gqg"]
+[ext_resource type="Texture2D" uid="uid://bxsqvio6h0hq6" path="res://assets/bachelors/cabeza_2.png" id="5_imse1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycqm5"]
+atlas = ExtResource("2_weptq")
+region = Rect2(1449, 214, 450, 866)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fbwj1"]
+radius = 30.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67pf1"]
+atlas = ExtResource("4_v2gqg")
+region = Rect2(1297, 82, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbwj1"]
+atlas = ExtResource("5_imse1")
+region = Rect2(1203, 324, 211, 227)
+
+[node name="Portrait" unique_id=1572422149 node_paths=PackedStringArray("clues") instance=ExtResource("1_wfvv2")]
+clues = [NodePath("Anchor/Body/Clue"), NodePath("Anchor/Body/Clue2"), NodePath("Anchor/Body/Clue3"), NodePath("Anchor/Body/Clue4")]
+
+[node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
+position = Vector2(0, -422)
+texture = SubResource("AtlasTexture_ycqm5")
+
+[node name="Clue" type="Area2D" parent="Anchor/Body" index="0" unique_id=769306162]
+position = Vector2(86, -163)
+script = ExtResource("3_onh2c")
+clue_name = &"wine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue" index="0" unique_id=1118905705]
+shape = SubResource("CircleShape2D_fbwj1")
+
+[node name="Clue2" type="Area2D" parent="Anchor/Body" index="1" unique_id=1409962262]
+position = Vector2(116, 167)
+script = ExtResource("3_onh2c")
+clue_name = &"wine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue2" index="0" unique_id=190225587]
+shape = SubResource("CircleShape2D_fbwj1")
+
+[node name="Clue3" type="Area2D" parent="Anchor/Body" index="2" unique_id=191597745]
+position = Vector2(-196, -197)
+script = ExtResource("3_onh2c")
+clue_name = &"finger"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue3" index="0" unique_id=1426666403]
+shape = SubResource("CircleShape2D_fbwj1")
+
+[node name="Clue4" type="Area2D" parent="Anchor/Body" index="3" unique_id=1821732866]
+position = Vector2(8, 133)
+script = ExtResource("3_onh2c")
+clue_name = &"finger"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue4" index="0" unique_id=567677141]
+shape = SubResource("CircleShape2D_fbwj1")
+
+[node name="Face1" type="Sprite2D" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="1" unique_id=968756937]
+visible = false
+position = Vector2(27, -507)
+texture = SubResource("AtlasTexture_67pf1")
+
+[node name="Face2" type="Sprite2D" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="2" unique_id=361944868]
+visible = false
+position = Vector2(27, -507)
+texture = SubResource("AtlasTexture_fbwj1")

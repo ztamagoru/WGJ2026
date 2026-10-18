@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3mx2adunhbs2"
-path="res://.godot/imported/fantasmin.png-2967d1ef8afc7c8f099e10cd696933e4.ctex"
+uid="uid://cmnfg228bqo06"
+path="res://.godot/imported/cabeza_1.png-7d4587e815fa9a5c8938d8f6ab3b34fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fantasmin.png"
-dest_files=["res://.godot/imported/fantasmin.png-2967d1ef8afc7c8f099e10cd696933e4.ctex"]
+source_file="res://assets/bachelors/cabeza_1.png"
+dest_files=["res://.godot/imported/cabeza_1.png-7d4587e815fa9a5c8938d8f6ab3b34fe.ctex"]
 
 [params]
 

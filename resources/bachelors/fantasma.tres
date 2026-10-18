@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="1_ed03k"]
 [ext_resource type="Resource" uid="uid://c6vn8s8jty3g0" path="res://dialogue/fantasma.dialogue" id="1_ol7da"]
-[ext_resource type="PackedScene" uid="uid://nmhxhd6c65w1" path="res://scenes/dialogue/characters/fantasma.tscn" id="2_dob1b"]
+[ext_resource type="PackedScene" uid="uid://nmhxhd6c65w1" path="res://resources/bachelors/fantasma.tscn" id="2_dob1b"]
 
 [resource]
 script = ExtResource("1_ed03k")

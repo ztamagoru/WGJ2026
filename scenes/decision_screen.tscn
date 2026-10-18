@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dp0eaerg301uw" path="res://scenes/decision_screen.gd" id="1_m610q"]
 [ext_resource type="PackedScene" uid="uid://b8xtn12qofqb6" path="res://scenes/investigation_screen.tscn" id="1_rd2jb"]
 [ext_resource type="Script" uid="uid://bda3gwikmp5qf" path="res://scenes/notepad_controller.gd" id="3_fk6bu"]
-[ext_resource type="Texture2D" uid="uid://d3mx2adunhbs2" path="res://assets/fantasmin.png" id="3_wbr8c"]
+[ext_resource type="Texture2D" uid="uid://d3mx2adunhbs2" path="res://assets/bachelors/fantasmin.png" id="3_wbr8c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fbwj1"]
 font_size = 8

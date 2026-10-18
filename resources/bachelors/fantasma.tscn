@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://nmhxhd6c65w1"]
 
-[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://scenes/dialogue/characters/portrait.tscn" id="1_pnygo"]
-[ext_resource type="Texture2D" uid="uid://d3mx2adunhbs2" path="res://assets/fantasmin.png" id="2_tlv3q"]
-[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_tlv3q"]
+[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_pnygo"]
+[ext_resource type="Texture2D" uid="uid://d3mx2adunhbs2" path="res://assets/bachelors/fantasmin.png" id="2_ynshg"]
+[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_n55gr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3fvi3"]
 radius = 75.3
@@ -12,12 +12,11 @@ clues = [NodePath("Anchor/Body/Clue")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
 position = Vector2(0, -238)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("2_tlv3q")
+texture = ExtResource("2_ynshg")
 
 [node name="Clue" type="Area2D" parent="Anchor/Body" index="0" unique_id=1992322033]
-position = Vector2(-3.8146973e-06, -44.999985)
-script = ExtResource("3_tlv3q")
+position = Vector2(-66.66667, -30.888893)
+script = ExtResource("3_n55gr")
 clue_name = &"wine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue" index="0" unique_id=1103100495]

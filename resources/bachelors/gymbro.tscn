@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bidnx3x24ftdl"]
+
+[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_lef5q"]
+[ext_resource type="Texture2D" uid="uid://ca6ibydeqkyt0" path="res://assets/bachelors/Vaquero.png" id="2_hboed"]
+
+[node name="Portrait" unique_id=1572422149 instance=ExtResource("1_lef5q")]
+
+[node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
+position = Vector2(0, -480)
+texture = ExtResource("2_hboed")
