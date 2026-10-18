@@ -1,10 +1,16 @@
 [gd_resource type="Resource" script_class="BachelorResource" format=3 uid="uid://b5u244qjamy1x"]
 
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_b0snt"]
-[ext_resource type="Resource" uid="uid://c6vn8s8jty3g0" path="res://dialogue/fantasma.dialogue" id="2_fxe8e"]
+[ext_resource type="Resource" uid="uid://dtqefvgbqerk8" path="res://alien.dialogue" id="2_fxe8e"]
 [ext_resource type="PackedScene" uid="uid://8w56ss7rexvq" path="res://resources/bachelors/alien.tscn" id="3_b0snt"]
 [ext_resource type="Texture2D" uid="uid://h8hex3u71v34" path="res://assets/bachelors/icons/alien.png" id="3_fxe8e"]
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="4_qevn4"]
+
+[sub_resource type="Resource" id="Resource_ljh32"]
+script = ExtResource("1_b0snt")
+id = &"fingers"
+description = "Perdió dedos en un accidente"
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
 
 [resource]
 script = ExtResource("4_qevn4")
@@ -13,4 +19,5 @@ name = "???"
 icon = ExtResource("3_fxe8e")
 portrait = ExtResource("3_b0snt")
 dialogue = ExtResource("2_fxe8e")
+clues = Array[ExtResource("1_b0snt")]([SubResource("Resource_ljh32")])
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

@@ -15,6 +15,10 @@ class_name NotepadController
 
 # --
 
+var clue_scene : PackedScene = preload("res://scenes/notepad_clue.tscn")
+
+# --
+
 var current_bachelor : BachelorResource
 
 var bachelor_index : int = 0:
@@ -31,6 +35,8 @@ func _ready() -> void:
 	previous_bachelor_button.pressed.connect(func(): bachelor_index -= 1)
 	next_bachelor_button.pressed.connect(func(): bachelor_index += 1)
 	
+	CluesManager.clue_unlocked.connect(func(): _update_page())
+	
 	_update_page()
 
 func _update_page() -> void:
@@ -43,10 +49,17 @@ func _update_page() -> void:
 	bachelor_description_label.text = current_bachelor.description
 	if current_bachelor.icon != null: bachelor_icon.texture = current_bachelor.icon
 	
-	var bachelor_clues : Array[String] = CluesManager.get_clues(current_bachelor.id)
+	var bachelor_clues = CluesManager.get_clues(current_bachelor.id)
 	if bachelor_clues.is_empty(): return
 	
 	for clue in bachelor_clues:
-		var clue_description : Label = Label.new()
-		clue_description.text = clue
-		clues_container.add_child(clue_description)
+		var notepad_clue := clue_scene.instantiate() as NotepadClue
+		clues_container.add_child(notepad_clue)
+		notepad_clue.load_clue(clue)
+		notepad_clue.clicked.connect(on_clue_clicked)
+
+func on_clue_clicked(clue : Clue) -> void:
+	if clue.contradicts == BachelorManager.current_bachelor:
+		DialogueManager.show_dialogue_balloon(BachelorManager.current_bachelor.dialogue, "accusation_correct")
+	else:
+		DialogueManager.show_dialogue_balloon(BachelorManager.current_bachelor.dialogue, "accusation_incorrect")

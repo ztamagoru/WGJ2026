@@ -37,6 +37,9 @@ Fantasma: Se que esta fiesta está llena de personajes, pero no soy tan especial
 => post_question
 
 ~ question_alien
+Fantasma: Dice haber perdido sus dedos en un accidente, pero lo conozco, y n-no es verdad...
+Fantasma: ¿Me pregunto porque mentirá?
+$> CluesManager.unlock_clue("fantasma", "fingers_alien")
 => post_question
 
 ~ post_question

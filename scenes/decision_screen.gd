@@ -7,6 +7,7 @@ class_name DecisionScreen
 @onready var slot_0 : Node2D = $Screen/Stage/Slot0
 
 @onready var investigation_screen : InvestigationScreen = $InvestigationScreen
+@onready var notepad : NotepadController = $Notepad
 
 # --
 
@@ -31,8 +32,12 @@ func _ready() -> void:
 	ask_costume.pressed.connect(_ask_question.bind("costume"))
 	ask_life.pressed.connect(_ask_question.bind("personal"))
 	
-	DialogueManager.dialogue_started.connect(func(x): buttons_container.hide())
-	DialogueManager.dialogue_ended.connect(func(x): buttons_container.show())
+	DialogueManager.dialogue_started.connect(func(x): 
+		buttons_container.hide()
+		notepad.hide())
+	DialogueManager.dialogue_ended.connect(func(x): 
+		buttons_container.show()
+		notepad.show())
 
 func _on_ask_pressed() -> void:
 	initial_buttons_container.visible = false
@@ -92,6 +97,7 @@ func _on_back_pressed() -> void:
 
 func _on_investigate_pressed() -> void:
 	screen.hide()
+	notepad.hide()
 	investigation_screen.show()
 
 
@@ -105,4 +111,5 @@ func _on_reject_pressed() -> void:
 
 func _on_investigation_screen_exited() -> void:
 	screen.show()
+	notepad.show()
 	investigation_screen.hide()

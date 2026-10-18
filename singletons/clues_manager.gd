@@ -2,6 +2,10 @@ extends Node
 
 # --
 
+signal clue_unlocked
+
+# --
+
 var unlocked_clues : Dictionary[StringName, Array]
 
 # --
@@ -13,21 +17,23 @@ func unlock_clue(bachelor_id : StringName, clue_id : StringName) -> void:
 	if unlocked_clues[bachelor_id].has(clue_id): return
 	
 	unlocked_clues[bachelor_id].append(clue_id)
+	
+	clue_unlocked.emit()
 
-func get_clues(bachelor_id : StringName) -> Array[String]:
+func get_clues(bachelor_id : StringName) -> Array[Clue]:
 	if not unlocked_clues.has(bachelor_id): return []
 	
 	var bachelor : BachelorResource = BachelorManager.get_bachelor(bachelor_id)
 	if bachelor == null: return []
 	
-	var clues_descriptions : Array[String] = []
+	var result : Array[Clue] = []
 	
 	if unlocked_clues[bachelor_id].is_empty(): return []
 	
 	for clue_id in unlocked_clues[bachelor_id]:
 		for clue in bachelor.clues:
 			if clue.id == clue_id:
-				clues_descriptions.append(clue.description)
+				result.append(clue)
 				break
 	
-	return clues_descriptions
+	return result

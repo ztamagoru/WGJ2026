@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bjmpolsngs06y"]
+
+[ext_resource type="Script" uid="uid://cde7xqs2njoap" path="res://scenes/notepad_clue.gd" id="1_jylea"]
+[ext_resource type="Texture2D" uid="uid://byn7x7gskawrl" path="res://assets/ui/Icono Pistas.png" id="2_77efs"]
+[ext_resource type="FontFile" uid="uid://bfngaqpot66e" path="res://assets/ui/Yuyu-Regular.ttf" id="3_3jyft"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x0de7"]
+font = ExtResource("3_3jyft")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="NotepadClue" type="Control" unique_id=291228333]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jylea")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1797795271]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClueTexture" type="TextureRect" parent="HBoxContainer" unique_id=826890399]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+texture = ExtResource("2_77efs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClueLabel" type="Label" parent="HBoxContainer" unique_id=1777403100]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pista"
+label_settings = SubResource("LabelSettings_x0de7")
