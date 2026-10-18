@@ -9,6 +9,7 @@ class_name BachelorResource
 @export_multiline() var description : String
 @export var icon : Texture
 @export var portrait : PackedScene
+@export var is_good_bachelor : bool = false
 
 @export_category("Dialogue")
 @export var dialogue : DialogueResource

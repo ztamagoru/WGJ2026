@@ -9,10 +9,18 @@ signal bachelor_finished()
 
 # --
 
+const GOOD_ENDING_SCENE : String = "res://scenes/endings/good_ending.tscn"
+const BAD_ENDING_SCENE : String = "res://scenes/endings/bad_ending.tscn"
+const ALONE_ENDING_SCENE : String = "res://scenes/endings/alone_ending.tscn"
+
+const BACHELORS_PATH : String = "res://resources/bachelors/"
+
+# --
+
 var decision_screen : PackedScene = preload("res://scenes/decision_screen.tscn")
 var current_decision_screen : DecisionScreen
 
-const BACHELORS_PATH : String = "res://resources/bachelors/"
+var game_manager
 
 var all_bachelors : Array[BachelorResource] = []
 var bachelors : Array[BachelorResource] = []
@@ -66,16 +74,45 @@ func start_speed_dating() -> void:
 		push_error("BACHELOR MANAGER: No bachelors loaded.")
 		return
 	
-	bachelors = all_bachelors
+	
+	bachelors = all_bachelors.duplicate()
 	bachelors.shuffle()
 	
 	speed_dating_started.emit()
 	_set_new_bachelor()
 
+func reject_bachelor() -> void:
+	if current_bachelor == null: return
+	
+	
+	bachelor_finished.emit()
+	current_bachelor = null
+	bachelors.pop_front()
+	
+	if bachelors.is_empty():
+		if game_manager == null:
+			push_error("BACHELOR MANAGER: GameManager not assigned.")
+			return
+		game_manager.change_scene(ALONE_ENDING_SCENE)
+	
+	_set_new_bachelor()
+
+func accept_bachelor() -> void:
+	if current_bachelor == null: return
+	
+	if game_manager == null:
+		push_error("BACHELOR MANAGER: GameManager not assigned.")
+		return
+	
+	if current_bachelor.is_good_bachelor: game_manager.change_scene(GOOD_ENDING_SCENE)
+	else: game_manager.change_scene(BAD_ENDING_SCENE)
+	return 
+
 # --
 
 func _bachelor_interaction(_resource : DialogueResource) -> void:
 	if current_bachelor == null: return
+	if bachelors.size() == 1: return
 	
 	remaining_interactions -= 1
 	if remaining_interactions == 0: _get_next_bachelor()
@@ -105,6 +142,8 @@ func _set_new_bachelor() -> void:
 func _create_decision_scene() -> void:
 	current_decision_screen = decision_screen.instantiate() as DecisionScreen
 	get_tree().current_scene.add_child(current_decision_screen)
+	await get_tree().process_frame
+	current_decision_screen.choose_button.visible = (bachelors.size() == 1)
 
 func _delete_decision_scene() -> void:
 	if not current_decision_screen == null:
