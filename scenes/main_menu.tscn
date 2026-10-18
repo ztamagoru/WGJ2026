@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dt062vb2jc3di"]
+
+[ext_resource type="Script" uid="uid://347r70wofxb1" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bp72arq8ovhqa" path="res://assets/ui/bg_menu.png" id="2_ekxnf"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1170951883]
+script = ExtResource("1_l6cm7")
+game_scene_path = "res://scenes/scenery.tscn"
+
+[node name="Control" type="Control" parent="." unique_id=190792952]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=497727630]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -500.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_ekxnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1820948139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 77
+
+[node name="Start" type="Button" parent="Control/MarginContainer" unique_id=2125327543]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "Empezar citas"
+
+[connection signal="pressed" from="Control/MarginContainer/Start" to="." method="_on_start_pressed"]

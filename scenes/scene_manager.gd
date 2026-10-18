@@ -19,11 +19,11 @@ enum fade_mode { FADE_IN, FADE_OUT }
 
 func _ready() -> void:
 	BachelorManager.scene_manager = self
-	change_scene("res://scenes/scenery.tscn")
+	change_scene(main_menu)
 
 # --
 
-func change_scene(scene : String) -> void:
+func change_scene(scene : String, wait_timer : bool = false) -> void:
 	await _fade(fade_mode.FADE_IN)
 	
 	for child in current_scene.get_children(): child.queue_free()
@@ -32,7 +32,11 @@ func change_scene(scene : String) -> void:
 	var scene_instance = new_scene.instantiate()
 	current_scene.add_child(scene_instance)
 	
+	if wait_timer:
+		await get_tree().create_timer(1.0).timeout
+	
 	if scene_instance.has_method("start_dating"): scene_instance.start_dating()
+	if ("scene_manager" in scene_instance): scene_instance.scene_manager = self
 	
 	await _fade(fade_mode.FADE_OUT)
 
