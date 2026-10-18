@@ -1,33 +1,58 @@
 ~ start
+Kura: ¿Estás bien? ¿Te encuentras estable?
+Kura: Uf, menos mal. Sabes aquí en las fiestas las mujeres son más propensas a sufrir desgracias. Quiero asegurarme de que todo esté bien.
+Kura: Y si alguien te hace daño.. no hagas nada.. solo dame su nombre. 
+Kura: Maldita injusticia.. maldito mundo injusto.
+El hombre de traje pateó el suelo de manera pateticamente sutil. 
 => END
 
 ~ question_costume
+Kura: No voy a andar de payaso por una fiesta. Aprovecho para vestirme como me visto todos los días.. pero esta vez sin ser juzgado. Siguiente pregunta. 
 => END
 
 ~ question_personal
+Kura: Baja la voz. Atenta. Si te juntas conmigo podrás entenderme. 
+El hombre de traje mira hacia los costados.
+Kura: Sospecho que alguien morirá en esta fiesta.
+Kura: Y yo tengo el deber de detenerlo. 
 => END
 
 # -- Preguntas personajes --
 
 ~ question_fantasma
+Kura: Ese… ese es el más sospechoso.
+Kura: Bajo esa manta.. bajo esa manta oculta algo estoy seguro.
+Kura: Me está haciendo la vida imposible en esta fiesta. 
+Se toca la mancha roja de su ropa
 => post_question
 
 ~ question_gymbro
+Kura: Aun con todos esos músculos que tiene. Yo soy MÁS poderoso que él. 
 => post_question
 
 ~ question_otaku
 => post_question
 
 ~ question_principe
+Kura: Un hombre muy gentil.
+Kura: Pero es un empresario… dirige un orfanato.
+Kura: Así que no confio. 
+Kura: También tiene esa mancha sospechosa, no lo vi tomar vino en toda la noche...
+$> CluesManager.unlock_clue("otaku", "wine_principe")
 => post_question
 
 ~ question_alien
+Kura: Tiene un diario parecido al mio.. ja.. pero no es igual
+Kura: No sabe con quién se está metiendo. 
+Kura: Averiguame su nombre si puedes. 
 => post_question
 
 ~ question_jacob
+Kura: Mhm creo que nos entendemos bien. Le gusta la ropa Vintage como yo. 
 => post_question
 
 ~ post_question
+El hombre de traje murmura cosas pero no se le entiende. A veces se aleja para usar su diario.
 => END
 
 # -- Investigación objetos --
@@ -35,9 +60,11 @@
 # que solo tiene la mancha de vino y el libro negro
 
 ~ investigation_wine
+Kura: ¿Esta mancha? Me tropecé con mi archienemigo… el fantasma
 => END
 
 ~ investigation_book
+Kura: Es mi diario. No lo toques.
 => END
 
 ~ investigation_phone
@@ -55,15 +82,25 @@
 # -- Acusaciones --
 
 ~ accusation_correct
+Kura: E.. Este diario? Tranquila.. no tiene nada que ver contigo.
+Kura: Aléjate de mí.. y no saldrás lastimada.
+Se aleja mientras murmura cosas y.. escribe en su libreta algo.
 => END
 
 ~ accusation_incorrect
+Kura: No entiendo lo que dices. ¿Te pusieron algo en la bebida? 
 => END
 
 ~ chosen
+Esa noche él te preguntó tu nombre y con una mirada de maldad lo anotó en su cuaderno.
+No pasó nada. Y él molesto, te ignoró. 
+Terminaste en su casa, con su mamá sola tomando café 
 $> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected
+El hombre de traje se enojó mucho.
+Kura: Bue, no me importa. Ya estás muy vieja. 
+Se fue enojado, refunfuñando y hablando solo. 
 $> BachelorManager.reject_bachelor()
 => END

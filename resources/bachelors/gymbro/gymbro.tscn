@@ -2,9 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_lef5q"]
 [ext_resource type="Texture2D" uid="uid://ca6ibydeqkyt0" path="res://assets/bachelors/Vaquero.png" id="2_hboed"]
+[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_1d6rl"]
+[ext_resource type="PackedScene" uid="uid://pyiohyt3dtuv" path="res://scenes/grindr_clue.tscn" id="3_b0284"]
 
-[node name="Portrait" unique_id=1572422149 instance=ExtResource("1_lef5q")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1d6rl"]
+radius = 75.3
+
+[node name="Portrait" unique_id=1572422149 node_paths=PackedStringArray("clues") instance=ExtResource("1_lef5q")]
+clues = [NodePath("Anchor/Body/Clue3"), NodePath("Anchor/Body/Clue")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
 position = Vector2(0, -480)
 texture = ExtResource("2_hboed")
+
+[node name="Clue3" parent="Anchor/Body" index="0" unique_id=1770845583 instance=ExtResource("3_b0284")]
+position = Vector2(280, 214)
+
+[node name="Clue" type="Area2D" parent="Anchor/Body" index="1" unique_id=1461602379]
+position = Vector2(68, -126)
+script = ExtResource("3_1d6rl")
+clue_name = &"fingers"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue" index="0" unique_id=1456196408]
+shape = SubResource("CircleShape2D_1d6rl")

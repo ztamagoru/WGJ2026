@@ -2,15 +2,34 @@
 
 [ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_bi2vk"]
 [ext_resource type="Texture2D" uid="uid://c83iq78pth2j1" path="res://assets/bachelors/Yakov.png" id="2_362pa"]
-[ext_resource type="Texture2D" uid="uid://bfl0ni3wn4ihm" path="res://assets/Notas2.png" id="3_362pa"]
+[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_0qmnm"]
+[ext_resource type="PackedScene" uid="uid://pyiohyt3dtuv" path="res://scenes/grindr_clue.tscn" id="3_lv4fl"]
 
-[node name="Portrait" unique_id=1572422149 instance=ExtResource("1_bi2vk")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lv4fl"]
+radius = 75.3
+
+[node name="Portrait" unique_id=1572422149 node_paths=PackedStringArray("clues") instance=ExtResource("1_bi2vk")]
+clues = [NodePath("Anchor/Body/Clue3"), NodePath("Anchor/Body/Clue"), NodePath("Anchor/Body/Clue2")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
 position = Vector2(0, -494)
 texture = ExtResource("2_362pa")
 
-[node name="GrindrSound" type="Sprite2D" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="1" unique_id=1047581488]
-position = Vector2(-182, -136)
-scale = Vector2(0.31926715, 0.31926715)
-texture = ExtResource("3_362pa")
+[node name="Clue3" parent="Anchor/Body" index="0" unique_id=1770845583 instance=ExtResource("3_lv4fl")]
+position = Vector2(276, 200)
+
+[node name="Clue" type="Area2D" parent="Anchor/Body" index="1" unique_id=1084368636]
+position = Vector2(86, 164.00003)
+script = ExtResource("3_0qmnm")
+clue_name = &"wine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue" index="0" unique_id=570586002]
+shape = SubResource("CircleShape2D_lv4fl")
+
+[node name="Clue2" type="Area2D" parent="Anchor/Body" index="2" unique_id=227059709]
+position = Vector2(-74, 360)
+script = ExtResource("3_0qmnm")
+clue_name = &"bite"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue2" index="0" unique_id=2088448333]
+shape = SubResource("CircleShape2D_lv4fl")

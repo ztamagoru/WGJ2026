@@ -6,11 +6,35 @@
 [ext_resource type="PackedScene" uid="uid://llc1x0csxgm7" path="res://resources/bachelors/principe/principe.tscn" id="2_y8sbj"]
 [ext_resource type="Texture2D" uid="uid://citiso3cqrwdf" path="res://assets/bachelors/icons/Asesino.png" id="3_asosd"]
 
+[sub_resource type="Resource" id="Resource_mhpaf"]
+script = ExtResource("1_wbnen")
+id = &"phone_gymbro"
+description = "Tiene una app de citas homosexuales"
+contradicts = &"gymbro"
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
+
+[sub_resource type="Resource" id="Resource_npmnb"]
+script = ExtResource("1_wbnen")
+id = &"otaku_book"
+description = "Escribe nombres en su libro"
+contradicts = &"otaku"
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
+
+[sub_resource type="Resource" id="Resource_j4hnl"]
+script = ExtResource("1_wbnen")
+id = &"alien_fingers"
+description = "Sus 3 dedos son naturales"
+contradicts = &"alien"
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
+
 [resource]
 script = ExtResource("1_bjcdg")
 id = &"principe"
 name = "Principe"
+description = "Un joven altamente encantador, somo su disfraz."
+tidbit = "¡Que galán!"
 icon = ExtResource("3_asosd")
 portrait = ExtResource("2_y8sbj")
 dialogue = ExtResource("2_bpil2")
+clues = Array[ExtResource("1_wbnen")]([SubResource("Resource_mhpaf"), SubResource("Resource_npmnb"), SubResource("Resource_j4hnl")])
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

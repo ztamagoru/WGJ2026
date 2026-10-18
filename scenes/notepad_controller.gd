@@ -47,6 +47,7 @@ func _update_page() -> void:
 	
 	bachelor_name_label.text = current_bachelor.name
 	bachelor_description_label.text = current_bachelor.description
+	bachelor_tidbit_label.text = current_bachelor.tidbit
 	if current_bachelor.icon != null: bachelor_icon.texture = current_bachelor.icon
 	
 	var bachelor_clues = CluesManager.get_clues(current_bachelor.id)
@@ -55,11 +56,15 @@ func _update_page() -> void:
 	for clue in bachelor_clues:
 		var notepad_clue := clue_scene.instantiate() as NotepadClue
 		clues_container.add_child(notepad_clue)
+		print(clue)
+		print(clue.contradicts)
 		notepad_clue.load_clue(clue)
 		notepad_clue.clicked.connect(on_clue_clicked)
 
 func on_clue_clicked(clue : Clue) -> void:
-	if clue.contradicts == BachelorManager.current_bachelor:
+	print(clue)
+	print("%s and %s" % [clue.contradicts, BachelorManager.current_bachelor.id])
+	if clue.contradicts == BachelorManager.current_bachelor.id:
 		DialogueManager.show_dialogue_balloon(BachelorManager.current_bachelor.dialogue, "accusation_correct")
 	else:
 		DialogueManager.show_dialogue_balloon(BachelorManager.current_bachelor.dialogue, "accusation_incorrect")

@@ -1,33 +1,56 @@
 ~ start
+Yakob: Antes que te acerques. Quiero que sepas que siempre pongo por delante mi investigación personal sobre el comportamiento humano antes que las amistades.
+Yakob: Si estás de acuerdo con ello, hablame.
+El chico se apoya en la pared. 
+Yakob: Ser diferente dentro de un mundo normal me representa. 
 => END
 
 ~ question_costume
+Yakob: Vine aquí disfrazado de Yacob Twuink no se si lo conoces, de una película de vampiros o.. lo que sea. 
+Yakob: Me dijeron que ese disfraz me sentaría acorde. 
 => END
 
 ~ question_personal
+Yakob: Criado entre lobos.. pero siempre siendo humano. Creo. 
+Yakob: Sabes el otro dia fui a la psicologa y me dijeron que tenia “complejo de héroe” o algo asi 
+Yakob: No es por presumir pero, hice un certificado con IA y ahora lo tengo colgado en mi habitación. 
 => END
 
 # -- Preguntas personajes --
 
 ~ question_fantasma
+Yakob: Oh, una persona misteriosa parece, ¿no? Es un amigo mio.
+Yakob: Ese disfraz que tiene ocultando su ser, tiene mucha aura. 
 => post_question
 
 ~ question_gymbro
+Yakob: Es el perfecto ejemplo de que en el gimnasio no se va a entrenar el cerebro.
+Yakob: Cada neurona perdida es un dedo perdido.
 => post_question
 
 ~ question_otaku
+Yakob: Es como yo.. con instinto cazador. Pero lo mío es un poco más territorial, ¿sabes?. 
+Yakob: Lo vi chocarse con mi amigo esta noche. 
 => post_question
 
 ~ question_principe
+Yakob: Mhm.. me da mala espina.
 => post_question
 
 ~ question_alien
+Yakob: Empezó a hablarme sobre el baño y su diseño  “infuncional”
+Yakob: "¡Está muy fuera del alcance de la mano, poco natural!" dice. No lo entendia.
+Yakob: Tenía miedo de que alguien nos escuchara así que me fui para no perder aura.
+$> CluesManager.unlock_clue("jacob", "fingers_alien")
 => post_question
 
 ~ question_jacob
 => post_question
 
 ~ post_question
+El sujeto empieza a estar más ansioso de lo común. 
+Yakob: Las voces de mi cabeza advierten peligro cercano. 
+Se agarra la cabeza y da un pequeño gruñido. 
 => END
 
 # -- Investigación objetos --
@@ -35,18 +58,24 @@
 # que solo tiene la mancha de vino y el libro negro
 
 ~ investigation_wine
+Yakob: ¿Qué preguntas? Es el diseño de mi remera. Vintage. 
+Yakob: Es parte del movimiento humano que estoy estudiando. 
 => END
 
 ~ investigation_book
 => END
 
 ~ investigation_phone
+Yakob: El sonido de mi celular? Lo tengo así por defecto.
+Yakob: No se que significa pero muchos la usan. 
+Yakob: Me sorprende como todos se dan la vuelta para escuchar mi notificación. 
 => END
 
 ~ investigation_fingers
 => END
 
 ~ investigation_bite
+Yakob: No toques! se puede infectar. Alejate.
 => END
 
 ~ investigation_glow
@@ -55,15 +84,27 @@
 # -- Acusaciones --
 
 ~ accusation_correct
+Yakob: Tsk, ¡te dije que no mires eso!. Me lastimé hace mucho peleando con otro..
+Yakob: Con otro.. humano, si. 
+Se esconde el brazo y te intenta ladrar.
 => END
 
 ~ accusation_incorrect
+Yakob: ¿Son las voces o mi instinto que no me deja entender lo que dices..?
+Yakob: Deja de decir tantas pavadas. 
 => END
 
 ~ chosen
+Al finalizar la fiesta, te llevo caminando por largas cuadras hacia un bosque. 
+Donde allí caminaste y caminaste para conocer a su familia…que resultó siendo.. ¿una manada de lobos? 
+Se acercaron y ¡PUM! de un mordisco te comieron viva.
+Fuiste la cena esa noche. 
 $> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected
+El hombre Twuink se enfureció un poco.
+Dio un pequeño gruñido y se fue de la fiesta.. caminando a cuatro patas 
+Por suerte nadie lo vio, habría perdido mucha aura.
 $> BachelorManager.reject_bachelor()
 => END

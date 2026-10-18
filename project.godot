@@ -13,7 +13,7 @@ config_version=5
 config/name="Corazón de Calabaza"
 run/main_scene="uid://bd14nnc3uc0f7"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://ovivqt2hpjhg"
 
 [autoload]
 
@@ -43,7 +43,7 @@ theme/custom="uid://pprlkwkgk7cv"
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://template.dialogue", "res://resources/bachelors/alien/alien.dialogue", "res://resources/bachelors/fantasma/fantasma.dialogue", "res://alien.dialogue", "res://resources/bachelors/gymbro/gymbro.dialogue", "res://resources/bachelors/jacob/jacob.dialogue", "res://resources/bachelors/otaku/otaku.dialogue", "res://resources/bachelors/principe/principe.dialogue")
+locale/translations_pot_files=PackedStringArray("res://template.dialogue", "res://resources/bachelors/alien/alien.dialogue", "res://resources/bachelors/fantasma/fantasma.dialogue", "res://resources/bachelors/gymbro/gymbro.dialogue", "res://resources/bachelors/jacob/jacob.dialogue", "res://resources/bachelors/otaku/otaku.dialogue", "res://resources/bachelors/principe/principe.dialogue")
 
 [physics]
 

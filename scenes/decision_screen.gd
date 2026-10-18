@@ -40,6 +40,8 @@ func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(func(x): 
 		buttons_container.show()
 		notepad.show())
+	
+	DialogueManager.show_dialogue_balloon(current_bachelor.dialogue, "start")
 
 func _on_ask_pressed() -> void:
 	initial_buttons_container.visible = false
@@ -58,6 +60,7 @@ func _ask_question(about : String) -> void:
 
 func _on_ask_someone_else_pressed() -> void:
 	specific_questions_container.visible = false
+	notepad.visible = false
 	characters_questions_container.visible = true
 	
 	for bachelor in BachelorManager.all_bachelors:
@@ -93,9 +96,7 @@ func _on_back_pressed() -> void:
 	initial_buttons_container.visible = true
 	specific_questions_container.visible = false
 
-
 # --
-
 
 func _on_investigate_pressed() -> void:
 	screen.hide()

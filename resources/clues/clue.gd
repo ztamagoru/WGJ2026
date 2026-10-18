@@ -5,4 +5,4 @@ class_name Clue
 
 @export var id : StringName
 @export var description : String
-@export var contradicts : BachelorResource
+@export var contradicts : StringName

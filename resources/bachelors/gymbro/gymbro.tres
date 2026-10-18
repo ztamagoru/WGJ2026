@@ -3,29 +3,29 @@
 [ext_resource type="PackedScene" uid="uid://bidnx3x24ftdl" path="res://resources/bachelors/gymbro/gymbro.tscn" id="1_qx0hm"]
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="1_uvtfv"]
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_xosqw"]
-[ext_resource type="Resource" uid="uid://dyw68yockmpfn" path="res://resources/bachelors/otaku/otaku.tres" id="2_7r5g4"]
 [ext_resource type="Texture2D" uid="uid://didp0ek6kwal1" path="res://assets/bachelors/icons/Perfil Vaquero.png" id="2_sfpvj"]
-[ext_resource type="Resource" uid="uid://dyictc2gse17u" path="res://resources/bachelors/jacob/jacob.tres" id="3_livpf"]
 [ext_resource type="Resource" uid="uid://3y75ehkqckrl" path="res://resources/bachelors/gymbro/gymbro.dialogue" id="4_livpf"]
 
 [sub_resource type="Resource" id="Resource_001r8"]
 script = ExtResource("1_xosqw")
 id = &"book_otaku"
 description = "El joven extraño escribe nombres en su libro"
-contradicts = ExtResource("2_7r5g4")
+contradicts = &"otaku"
 metadata/_custom_type_script = "uid://c7o1desoktjqk"
 
 [sub_resource type="Resource" id="Resource_kwa35"]
 script = ExtResource("1_xosqw")
 id = &"animal_jacob"
 description = "Yakob tiene comportamiento animal"
-contradicts = ExtResource("3_livpf")
+contradicts = &"jacob"
 metadata/_custom_type_script = "uid://c7o1desoktjqk"
 
 [resource]
 script = ExtResource("1_uvtfv")
 id = &"gymbro"
 name = "Vaquero"
+description = "Un armatoste de humano, armadisimo."
+tidbit = "No juzges a un libro por su portada..."
 icon = ExtResource("2_sfpvj")
 portrait = ExtResource("1_qx0hm")
 dialogue = ExtResource("4_livpf")

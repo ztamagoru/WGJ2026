@@ -6,11 +6,21 @@
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="2_21a77"]
 [ext_resource type="Resource" uid="uid://xaklkajcq8kn" path="res://resources/bachelors/otaku/otaku.dialogue" id="2_wfcie"]
 
+[sub_resource type="Resource" id="Resource_wfcie"]
+script = ExtResource("1_evqgw")
+id = &"wine_principe"
+description = "El principe no tomó vino"
+contradicts = &"principe"
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
+
 [resource]
 script = ExtResource("2_21a77")
 id = &"otaku"
 name = "Kura"
+description = "Aparenta estar bien vestido, pero se nota el sudor debajo de su traje."
+tidbit = "Pucha, ¡es Kura de Deaf Note!"
 icon = ExtResource("2_6ri4h")
 portrait = ExtResource("1_88ko5")
 dialogue = ExtResource("2_wfcie")
+clues = Array[ExtResource("1_evqgw")]([SubResource("Resource_wfcie")])
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

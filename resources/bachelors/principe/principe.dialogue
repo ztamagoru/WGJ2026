@@ -1,33 +1,71 @@
 ~ start
+Principe: Ah, ¡Hola! Es *encantador* conocerte.
+Principe: ¿Entendés? ¿Encantador? Como-
+Principe: No importa, ¡Un gusto!
+El joven hace una reverencia y me besa la mano gentilmente, ¡que galán!
 => END
 
 ~ question_costume
+Principe: ¡Por favor, mujer! ¿Acaso no reconoces a una iconica figura del film animado tal como moa?
+Principe: Es obvio que soy... ¡El Principe Cautivador!
+Principe: Tu sabes, ¿El de la pelicula de FilmWorks? ¿Shweck?
+Principe: ¡Yo quiero un héroe!
 => END
 
 ~ question_personal
+Principe: Reconozco que estoy disfrazado, ¿pero acaso no reconoces mi rostro?
+Principe: Te dejo una pista, el orfanato sobre la calle San Martín. En efecto, ¡Soy el dueño!
+Principe: Soy el popular filantropo que aparece constantemente en la televisión.
+Principe: Estoy en todo momento salvando a niños huerfanos de quedarse patitas en la calle. ¡Deberías ver sus dulces rostros!
+Principe: Una pena lo que le pasó a sus padres...
 => END
 
 # -- Preguntas personajes --
 
 ~ question_fantasma
+Principe: No lo conozco. Está muy por debajo de moa.
+Principe: Por lo poco que se de el, es un poco descuidado. ¡Especialmente cuando se trata del vino!
 => post_question
 
 ~ question_gymbro
+Principe: Ah. Mi "Brother", como diría el.
+Principe: Vamos al gimnasio juntos, según el somos compañeros de alma. Para mi es un conocido pasante.
+Principe: Debería silenciar su telefono de vez en cuando, ¡no dejan de sonar sus notificaciones constantemente!
+Principe: Especialmente esa de esa app de citas homosexuales...
+$> CluesManager.unlock_clue("principe", "phone_gymbro")
 => post_question
 
 ~ question_otaku
+Principe: Ah. Esa basura. ¡Con solo verle la cara me da asco!
+Principe: Finge ser un señor de buenos modales como moa, ¡pero es un mocoso!
+Principe: No sabes, cuando fui al ropero a dejar mis prendas vi un- uno-
+Principe: ¡Una de esas almohadas con una mujer impresa al frente! Y dejame decirte querida, llevaba menos ropa que la mayoria de las mujeres hoy en día.
+Principe: Cuando se lo intenté mencionar, escribió mi nombre en su libreto. ¡Supongo que porque no querrá olvidarse de mi!
+$> CluesManager.unlock_clue("principe", "otaku_book")
 => post_question
 
 ~ question_principe
 => post_question
 
 ~ question_alien
+Principe: Hay algo de el que no me gusta...
+Principe: Le faltan dedos, lo cual entiendo, pero cuando le pregunté me dijo que no los habia perdido, que era así naturalmente.
+Principe: Y cuando entré a la fiesta me dio su mano para sacudirla, ¡y esta tenía un olor horrendo!
+Principe: Inmediatamente me fui a lavar las manos. Guacala.
+$> CluesManager.unlock_clue("principe", "alien_fingers")
 => post_question
 
 ~ question_jacob
+Principe: ¡Tenemos mucho en común! Al parecer es un filantropo tal como yo.
+Principe: Aunque debo admitir que es un tipo bastante peculiar.
+Principe: Le estaba hablando de las dificultades en mantener el orfanato en buen estado y el me respondió.
+Principe: "Es mas dificil contener tus ganas de comerlos..."
+Principe: Que rarito..
 => post_question
 
 ~ post_question
+Principe: Es natural que quieras saber tanto de mi. Después de todo, soy...
+Principe: Encantador
 => END
 
 # -- Investigación objetos --
@@ -35,15 +73,24 @@
 # que solo tiene la mancha de vino y el libro negro
 
 ~ investigation_wine
+Principe: Una molestia. Me choqué con dos fulanitos en la pista de baile. Creo que fueron el fantasma y el joven con traje.
+Principe: Recuerdame a no tomar tanto, porfavor.
 => END
 
 ~ investigation_book
 => END
 
 ~ investigation_phone
+Principe: Ah, es un sonido de una aplicación de citas para gente homosexual.
+Principe: ¡Lo cual yo no soy, que conste! Solo lo uso para encontrar padres solteros.
+Principe: Como excelente filantropo que soy, me gusta soportar a las comunidades minoritarias, ¡especialmente cuando hay niños que necesitan ayuda!
+Principe: Eso. Filantropo. Comunidad minoritarias. Por eso uso la app, para encontrar victi- digo, ¡gente en necesidad de mi apoyo!
+$> CluesManager.unlock_clue("principe", "phone_gymbro")
 => END
 
 ~ investigation_fingers
+Principe: ¡A-Ah! Un accidente... Mira, estaba cocinando para los pobres chicos y de repente, ¡Chak! ¡Allí va mi dedo!
+Principe: Es muy dificil agarrar cosas con 3 dedos, pero que va a ser.
 => END
 
 ~ investigation_bite
@@ -55,15 +102,26 @@
 # -- Acusaciones --
 
 ~ accusation_correct
+Principe: ¡Gulp! ¡No se que es lo que insinuas pero estas explicitamente ERRONEA!
+Principe: No hay nada, NADA sospechoso acerca de esta mancha color bordó sobre mi camisa. ¡Nada!
+Principe: (Susurrando) Como si tu testimonio fuese suficiente para un juez en un primer lugar...
 => END
 
 ~ accusation_incorrect
+Principe: No estoy entendiendo nada de lo que dices mi dulce princesa, pero voy a asentir la cabeza como que si de todos modos
 => END
 
 ~ chosen
+Decidiste irte a la casa del principe esa noche. Sin embargo, el te guió a un callejón sin salida
+Antes de que lo supieras, el saca de detrás suyo... ¡Un cuchillo!
+¡Shak! ¡Puaj! ¡Plsshhhhhhh!
+
+¡Fuiste la victima de un asesino serial!
 $> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected
+Principe: Ah, supongo que tu no eres mi princesa después de todo...
+El principe se da vuelta, y puedes ver que desde su pantalones sobresale un mango de un cuchillo de cocina.
 $> BachelorManager.reject_bachelor()
 => END

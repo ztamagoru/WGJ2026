@@ -2,9 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_evc5q"]
 [ext_resource type="Texture2D" uid="uid://dmjmojwn5r4i2" path="res://assets/bachelors/kuro.png" id="2_x20rn"]
+[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_nllq8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jobym"]
+radius = 75.3
 
 [node name="Portrait" unique_id=1572422149 instance=ExtResource("1_evc5q")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
 position = Vector2(-172, -494)
 texture = ExtResource("2_x20rn")
+
+[node name="Clue" type="Area2D" parent="Anchor/Body" index="0" unique_id=1618725946]
+position = Vector2(394, 126)
+script = ExtResource("3_nllq8")
+clue_name = &"book"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue" index="0" unique_id=653240588]
+shape = SubResource("CircleShape2D_jobym")
+
+[node name="Clue2" type="Area2D" parent="Anchor/Body" index="1" unique_id=638732863]
+position = Vector2(144, -184)
+script = ExtResource("3_nllq8")
+clue_name = &"wine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue2" index="0" unique_id=2111635470]
+shape = SubResource("CircleShape2D_jobym")

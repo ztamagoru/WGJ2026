@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_wfvv2"]
 [ext_resource type="Texture2D" uid="uid://dhcemk575gb6o" path="res://assets/bachelors/princep_solo.png" id="2_weptq"]
 [ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_onh2c"]
+[ext_resource type="PackedScene" uid="uid://pyiohyt3dtuv" path="res://scenes/grindr_clue.tscn" id="4_hh0gk"]
 [ext_resource type="Texture2D" uid="uid://cmnfg228bqo06" path="res://assets/bachelors/cabeza_1.png" id="4_v2gqg"]
 [ext_resource type="Texture2D" uid="uid://bxsqvio6h0hq6" path="res://assets/bachelors/cabeza_2.png" id="5_imse1"]
 
@@ -59,6 +60,9 @@ clue_name = &"finger"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue4" index="0" unique_id=567677141]
 shape = SubResource("CircleShape2D_fbwj1")
+
+[node name="Clue5" parent="Anchor/Body" index="4" unique_id=1770845583 instance=ExtResource("4_hh0gk")]
+position = Vector2(266, 80)
 
 [node name="Face1" type="Sprite2D" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="1" unique_id=968756937]
 visible = false

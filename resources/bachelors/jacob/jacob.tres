@@ -6,11 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://ceo15j5hbmdhd" path="res://assets/bachelors/icons/Yakov.png" id="2_kxuy8"]
 [ext_resource type="Resource" uid="uid://bp7lgo5cysd8a" path="res://resources/bachelors/jacob/jacob.dialogue" id="2_yeq34"]
 
+[sub_resource type="Resource" id="Resource_livpf"]
+script = ExtResource("1_l3rso")
+id = &"fingers_alien"
+description = "Los 3 dedos de ??? son naturales"
+contradicts = &"alien"
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
+
 [resource]
 script = ExtResource("2_7351e")
 id = &"jacob"
 name = "Yakob"
+description = "Un joven con los dientes bien tallados."
+tidbit = "Huele un poco a meo..."
 icon = ExtResource("2_kxuy8")
 portrait = ExtResource("1_gm7mf")
 dialogue = ExtResource("2_yeq34")
+clues = Array[ExtResource("1_l3rso")]([SubResource("Resource_livpf")])
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

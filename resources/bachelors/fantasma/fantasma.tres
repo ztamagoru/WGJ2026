@@ -4,22 +4,24 @@
 [ext_resource type="Resource" uid="uid://c6vn8s8jty3g0" path="res://resources/bachelors/fantasma/fantasma.dialogue" id="1_ol7da"]
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_xhmes"]
 [ext_resource type="PackedScene" uid="uid://nmhxhd6c65w1" path="res://resources/bachelors/fantasma/fantasma.tscn" id="2_dob1b"]
-[ext_resource type="Resource" uid="uid://dd75brqngsa8i" path="res://resources/bachelors/principe/principe.tres" id="2_tkxv5"]
 [ext_resource type="Texture2D" uid="uid://blipyvcchufvh" path="res://assets/bachelors/icons/Fantasmin.png" id="3_xm5qc"]
 
 [sub_resource type="Resource" id="Resource_3bdmv"]
 script = ExtResource("1_xhmes")
 id = &"wine_principe"
 description = "El principe no tomó vino"
-contradicts = ExtResource("2_tkxv5")
+contradicts = &"principe"
 metadata/_custom_type_script = "uid://c7o1desoktjqk"
 
 [resource]
 script = ExtResource("1_ed03k")
 id = &"fantasma"
 name = "Fantasma"
+description = "Un chico que parece muy nervioso..."
+tidbit = "¿Estará escondiendo algo?"
 icon = ExtResource("3_xm5qc")
 portrait = ExtResource("2_dob1b")
+is_good_bachelor = true
 dialogue = ExtResource("1_ol7da")
 clues = Array[ExtResource("1_xhmes")]([SubResource("Resource_3bdmv")])
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

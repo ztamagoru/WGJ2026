@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://pyiohyt3dtuv"]
+
+[ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="1_t8u51"]
+[ext_resource type="Texture2D" uid="uid://bfl0ni3wn4ihm" path="res://assets/Notas2.png" id="2_4im3d"]
+[ext_resource type="AudioStream" uid="uid://b1sj7emnh4gio" path="res://assets/sfx/grindr.mp3" id="3_i4xf6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvhmt"]
+radius = 75.3
+
+[node name="Clue3" type="Area2D" unique_id=1770845583]
+script = ExtResource("1_t8u51")
+clue_name = &"phone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067244183]
+shape = SubResource("CircleShape2D_fvhmt")
+
+[node name="GrindrSound" type="Sprite2D" parent="." unique_id=1713045652]
+scale = Vector2(0.31926715, 0.31926715)
+texture = ExtResource("2_4im3d")
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=316360711]
+stream = ExtResource("3_i4xf6")
+volume_db = -10.0
+
+[connection signal="mouse_entered" from="." to="AudioStreamPlayer" method="play"]

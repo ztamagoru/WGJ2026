@@ -8,7 +8,7 @@
 radius = 75.3
 
 [node name="Portrait" unique_id=1572422149 node_paths=PackedStringArray("clues") instance=ExtResource("1_pnygo")]
-clues = [NodePath("Anchor/Body/Clue")]
+clues = [NodePath("Anchor/Body/Clue"), NodePath("Anchor/Body/Clue2")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
 position = Vector2(0, -238)
