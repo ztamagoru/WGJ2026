@@ -11,3 +11,6 @@ class_name BachelorResource
 
 @export_category("Dialogue")
 @export var dialogue : DialogueResource
+
+@export_category("Clues")
+@export var clues : Array[Clue]

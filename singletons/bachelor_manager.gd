@@ -52,6 +52,14 @@ func _load_bachelors_from_directory(path : String) -> void:
 
 # --
 
+func get_bachelor(bachelor_id : StringName) -> BachelorResource:
+	for bachelor in bachelors:
+		if bachelor.id == bachelor_id: return bachelor
+	
+	return null
+
+# --
+
 func start_speed_dating() -> void:
 	if bachelors.is_empty():
 		push_error("BACHELOR MANAGER: No bachelors loaded.")
