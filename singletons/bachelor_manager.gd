@@ -2,18 +2,36 @@ extends Node
 
 # --
 
+signal speed_dating_started()
+
+signal bachelor_started()
+signal bachelor_finished()
+
+# --
+
 var decision_screen : PackedScene = preload("res://scenes/decision_screen.tscn")
+var current_decision_screen : DecisionScreen
 
 const BACHELORS_PATH : String = "res://resources/bachelors/"
 
 var bachelors : Array[BachelorResource] = []
 
-var current_bachelor : BachelorResource
+var current_bachelor : BachelorResource:
+	set(value):
+		current_bachelor = value
+		if current_bachelor == null: _delete_decision_scene()
+		else: _create_decision_scene()
+
+var remaining_interactions : int 
+const max_interactions : int = 3
 
 # --
 
 func _ready() -> void:
+	DialogueManager.dialogue_ended.connect(_bachelor_interaction)
+	
 	_load_bachelors_from_directory(BACHELORS_PATH)
+	
 	start_speed_dating()
 
 func _load_bachelors_from_directory(path : String) -> void:
@@ -41,9 +59,44 @@ func start_speed_dating() -> void:
 	
 	bachelors.shuffle()
 	
-	current_bachelor = bachelors[0]
-	
-	var screen := decision_screen.instantiate() as DecisionScreen
-	get_tree().current_scene.add_child(screen)
+	speed_dating_started.emit()
+	_set_new_bachelor()
 
 # --
+
+func _bachelor_interaction(_resource : DialogueResource) -> void:
+	if current_bachelor == null: return
+	
+	remaining_interactions -= 1
+	if remaining_interactions == 0: _get_next_bachelor()
+
+# --
+
+func _get_next_bachelor() -> void:
+	bachelor_finished.emit()
+	
+	current_bachelor = null
+	
+	var finished_bachelor: BachelorResource = bachelors.pop_front()
+	bachelors.push_back(finished_bachelor)
+	
+	_set_new_bachelor()
+
+# --
+
+func _set_new_bachelor() -> void:
+	current_bachelor = bachelors[0]
+	remaining_interactions = max_interactions
+	
+	bachelor_started.emit()
+
+# --
+
+func _create_decision_scene() -> void:
+	current_decision_screen = decision_screen.instantiate() as DecisionScreen
+	get_tree().current_scene.add_child(current_decision_screen)
+
+func _delete_decision_scene() -> void:
+	if not current_decision_screen == null:
+				current_decision_screen.queue_free()
+				current_decision_screen = null
