@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BachelorResource" format=3 uid="uid://ofgajmsucn2y"]
+
+[ext_resource type="PackedScene" uid="uid://bidnx3x24ftdl" path="res://resources/bachelors/gymbro.tscn" id="1_qx0hm"]
+[ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="1_uvtfv"]
+
+[resource]
+script = ExtResource("1_uvtfv")
+id = &"gymbro"
+name = "Gymbro"
+portrait = ExtResource("1_qx0hm")
+metadata/_custom_type_script = "uid://boq17sd0ydkdh"

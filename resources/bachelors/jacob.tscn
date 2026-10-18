@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://luumjp4q1p7x"]
+
+[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_bi2vk"]
+[ext_resource type="Texture2D" uid="uid://c83iq78pth2j1" path="res://assets/bachelors/Yakov.png" id="2_362pa"]
+
+[node name="Portrait" unique_id=1572422149 instance=ExtResource("1_bi2vk")]
+
+[node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
+position = Vector2(0, -494)
+texture = ExtResource("2_362pa")

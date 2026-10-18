@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BachelorResource" format=3 uid="uid://dyw68yockmpfn"]
+
+[ext_resource type="PackedScene" uid="uid://bfxxta0dqr2fa" path="res://resources/bachelors/otaku.tscn" id="1_88ko5"]
+[ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="2_21a77"]
+
+[resource]
+script = ExtResource("2_21a77")
+id = &"otaku"
+name = "Otaku"
+portrait = ExtResource("1_88ko5")
+metadata/_custom_type_script = "uid://boq17sd0ydkdh"

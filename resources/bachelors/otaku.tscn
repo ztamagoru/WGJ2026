@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bfxxta0dqr2fa"]
+
+[ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_evc5q"]
+[ext_resource type="Texture2D" uid="uid://dmjmojwn5r4i2" path="res://assets/bachelors/kuro.png" id="2_x20rn"]
+
+[node name="Portrait" unique_id=1572422149 instance=ExtResource("1_evc5q")]
+
+[node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
+position = Vector2(-172, -494)
+texture = ExtResource("2_x20rn")
