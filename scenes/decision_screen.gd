@@ -10,6 +10,8 @@ class_name DecisionScreen
 
 # --
 
+@onready var buttons_container : MarginContainer			= $Screen/MarginContainer
+
 @onready var initial_buttons_container : HBoxContainer		= $Screen/MarginContainer/InitialQuestions
 @onready var specific_questions_container : HBoxContainer	= $Screen/MarginContainer/SpecificQuestions
 @onready var characters_questions_container : GridContainer = $Screen/MarginContainer/CharacterQuestions
@@ -28,6 +30,9 @@ func _ready() -> void:
 	
 	ask_costume.pressed.connect(_ask_question.bind("costume"))
 	ask_life.pressed.connect(_ask_question.bind("personal"))
+	
+	DialogueManager.dialogue_started.connect(func(x): buttons_container.hide())
+	DialogueManager.dialogue_ended.connect(func(x): buttons_container.show())
 
 func _on_ask_pressed() -> void:
 	initial_buttons_container.visible = false
