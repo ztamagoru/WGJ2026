@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_b0snt"]
 [ext_resource type="Resource" uid="uid://dtqefvgbqerk8" path="res://resources/bachelors/alien/alien.dialogue" id="2_fxe8e"]
+[ext_resource type="Resource" uid="uid://ofgajmsucn2y" path="res://resources/bachelors/gymbro/gymbro.tres" id="2_tisct"]
+[ext_resource type="Resource" uid="uid://dyictc2gse17u" path="res://resources/bachelors/jacob/jacob.tres" id="3_4akxy"]
 [ext_resource type="PackedScene" uid="uid://8w56ss7rexvq" path="res://resources/bachelors/alien/alien.tscn" id="3_b0snt"]
 [ext_resource type="Texture2D" uid="uid://h8hex3u71v34" path="res://assets/bachelors/icons/alien.png" id="3_fxe8e"]
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="4_qevn4"]
@@ -12,6 +14,20 @@ id = &"fingers"
 description = "Perdió dedos en un accidente"
 metadata/_custom_type_script = "uid://c7o1desoktjqk"
 
+[sub_resource type="Resource" id="Resource_xjegv"]
+script = ExtResource("1_b0snt")
+id = &"phone_gymbro"
+description = "El gymbro tiene una app de citas homosexuales"
+contradicts = ExtResource("2_tisct")
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
+
+[sub_resource type="Resource" id="Resource_0qibe"]
+script = ExtResource("1_b0snt")
+id = &"animal_jacob"
+description = "Yakob tiene comportamiento animal"
+contradicts = ExtResource("3_4akxy")
+metadata/_custom_type_script = "uid://c7o1desoktjqk"
+
 [resource]
 script = ExtResource("4_qevn4")
 id = &"alien"
@@ -19,5 +35,5 @@ name = "???"
 icon = ExtResource("3_fxe8e")
 portrait = ExtResource("3_b0snt")
 dialogue = ExtResource("2_fxe8e")
-clues = Array[ExtResource("1_b0snt")]([SubResource("Resource_ljh32")])
+clues = Array[ExtResource("1_b0snt")]([SubResource("Resource_ljh32"), SubResource("Resource_xjegv"), SubResource("Resource_0qibe")])
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

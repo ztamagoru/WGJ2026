@@ -14,7 +14,7 @@ region = Rect2(1129, 114, 639, 966)
 radius = 75.3
 
 [node name="Portrait" unique_id=1572422149 node_paths=PackedStringArray("clues") instance=ExtResource("1_dv18a")]
-clues = [NodePath("Anchor/Body/Clue"), NodePath("Anchor/Body/Clue2")]
+clues = [NodePath("Anchor/Body/Clue"), NodePath("Anchor/Body/Clue2"), NodePath("Anchor/Body/Clue3"), NodePath("Anchor/Body/Clue4")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
 position = Vector2(0, -468)
@@ -36,7 +36,15 @@ clue_name = &"fingers"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue2" index="0" unique_id=598168]
 shape = SubResource("CircleShape2D_001r8")
 
-[node name="Clue3" type="Area2D" parent="Anchor/Body" index="2" unique_id=1408572246]
+[node name="Clue4" type="Area2D" parent="Anchor/Body" index="2" unique_id=1051390111]
+position = Vector2(102, -196)
+script = ExtResource("3_n3oxn")
+clue_name = &"book"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue4" index="0" unique_id=2022289876]
+shape = SubResource("CircleShape2D_001r8")
+
+[node name="Clue3" type="Area2D" parent="Anchor/Body" index="3" unique_id=1408572246]
 position = Vector2(-210, 110)
 script = ExtResource("3_n3oxn")
 clue_name = &"phone"

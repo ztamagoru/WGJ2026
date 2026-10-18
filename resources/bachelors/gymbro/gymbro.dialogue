@@ -1,0 +1,124 @@
+~ start
+Vaquero: ¿Alguien sabe dónde puedo calentar un tupper?
+El extraño musculoso miró a su alrededor
+Vaquero: Necesito llegar a las siete mil calorías diarias, traje pechuga de pollo.
+Cuando dejó de insistir en eso, se dio la vuelta para hablar.
+Vaquero: Era un chiste gordi.. comí antes de venir. 
+Vaquero: Los vaqueros pueden bromear, ¿sabes? 
+=> END
+
+~ question_costume
+Vaquero: Ha ha me encantan los vaqueros ¿Qué te puedo decir? 
+Vaquero: Su rudeza… su valentía… 
+Vaquero: Me atrapa.
+=> END
+
+~ question_personal
+Vaquero: Y c… Espera espera.
+Vaquero: Me está mensajeando mi bro.
+Se dio la vuelta y comenzó a responder los chats. 
+Vaquero: Que si que si, mañana tenemos competencia.
+Vaquero: Él pesado este… 
+Vaquero: Disculpa, ¿qué decías gordi?
+=> END
+
+# -- Preguntas personajes --
+
+~ question_fantasma
+Vaquero: Mhm.. me pregunto cómo se verá abajo de ese manto. 
+Vaquero: Es muy torpe, lo vi chocarse con otra persona de aquí. 
+#$> CluesManager.unlock_clue("gymbro", "wine_fantasma")
+=> post_question
+
+~ question_gymbro
+=> post_question
+
+~ question_otaku
+Vaquero: Estaba tomando mucho esta noche.
+Vaquero: Cuando le hablé le recomendé buenos ejercicios para mejorar sus hábitos. 
+Vaquero: ¡Inmediatamente escribió mi nombre en su librito! Quizá sea un futuro brother. 
+$> CluesManager.unlock_clue("gymbro", "book_otaku")
+=> post_question
+
+~ question_principe
+Vaquero: Uff otro brother de aquí. 
+Vaquero: Prepara unos platazos de carne que me ayudan a subir las calorías por día. 
+Vaquero: Un maquina, un grande. Lastima que se cortó un dedo hace un par de meses.
+=> post_question
+
+~ question_alien
+Vaquero: El otro dia lo vi entrar al gym a ese. 
+Vaquero: Lo vi agarrar una mancuerna con tres dedos nomás. ¿Qué agarre es ese, bro?
+Vaquero: Le pregunté al respecto, me dijo que era natural en "su gente"
+=> post_question
+
+~ question_jacob
+Vaquero: Me pidió una rutina personalizada, de un animal o algo así.
+Vaquero: Pago re bien el brother. 
+$> CluesManager.unlock_clue("gymbro", "animal_jacob")
+=> post_question
+
+~ post_question
+Vaquero: Sos re buena onda gordi. Hablar con vos es como un buen pecho: cuesta pero vale la pena
+Vaquero: Osea.. buendia de pecho…
+Se dio una palmada en su propio pecho fuerte 
+=> END
+
+# -- Investigación objetos --
+# Añadir objetos que tiene el personaje, acá uso el fantasma como referencia
+# que solo tiene la mancha de vino y el libro negro
+
+~ investigation_wine
+=> END
+
+~ investigation_book
+=> END
+
+~ investigation_phone
+Vaquero: ¿Ese sonido..? ¿Qué sonido? Yo no escuche nada.
+Intenta bajar el volumen cuidadosamente.
+Vaquero: No entiendo de que sonido hablas. 
+=> END
+
+~ investigation_fingers
+Vaquero: Gordi, mira la pregunta que me haces.. 
+Vaquero: Me retaron a hacer sentadillas con 100 kilos en la espalda… solamente usando el dedo meñique. Bueno.. las cosas no resultaron muy bien.
+Vaquero: Después quise la revancha con otro dedo y…
+…
+Vaquero: Tengo que llamar a mi brother. 
+Un poco triste, el vaquero se da la vuelta. 
+=> END
+
+~ investigation_bite
+=> END
+
+~ investigation_glow
+=> END
+
+# -- Acusaciones --
+
+~ accusation_correct
+Vaquero: ¡Nada que ver! Es una aplicación de brothers eh..
+Vaquero: ¿D..dónde está el sabelotodo este? que necesito pedirle un favor.. como se le baja el volumen a esta cosa… 
+El musculoso intenta esconderse detrás de un parlante mientras le pide ayuda al informático del baile. Creo que no entra.
+=> END
+
+~ accusation_incorrect
+Vaquero: No.. nada que ver
+Vaquero: Mis brothers no me tratan así, eh? 
+=> END
+
+~ chosen
+La noche terminó en el gimnasio, a las cinco de la mañana, compartiendo una pechuga fría en un tupper.
+Vaquero: Perdón, gordi. Es mi bro, me está mensajeando.
+Sonó otro ding. Y otro. Y otro. Mirabas como se reía cuando usaba el celular. 
+Más tarde te enteraste\: eras su coartada para que.. la gente no sospechara de él y sus gustos culposos. 
+El vaquero nunca volvió a llamarte. 
+$> BachelorManager.accept_bachelor()
+=> END
+
+~ rejected
+El vaquero Sonrió levemente
+Vaquero: Como quieras.. 
+$> BachelorManager.reject_bachelor()
+=> END

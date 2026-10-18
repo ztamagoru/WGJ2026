@@ -18,10 +18,13 @@
 ~ question_otaku
 => post_question
 
-~ question_killer
+~ question_principe
 => post_question
 
 ~ question_alien
+=> post_question
+
+~ question_jacob
 => post_question
 
 ~ post_question
@@ -41,24 +44,17 @@
 => END
 
 ~ investigation_fingers
-???: ¡¿Mis dedos?! ¡Mis dedos son perfectamente normal-!
-???: Digo- Digo, ¡lo serían! Si no fuese porque los perdí en ese... ¡Accidente Tragico!
-$> CluesManager.unlock_clue("alien", "fingers")
 => END
 
-~ investigation_lenses
+~ investigation_bite
+=> END
+
+~ investigation_glow
 => END
 
 # -- Acusaciones --
 
 ~ accusation_correct
-???: ¿Que no estuve en ningún accidente tragico?
-???: ¡F-Falacias! ¡Mentiras! ¡N-n-no se de que hablas!
-???: Zirp zlorp glirp glorp glorp zorp
-???: Aaaaabababababaaaaaaaaa
-Los ojos del extraño se empiezan a mover por todos lados.
-De repente se quedan quietos mirando derecho para adelante, y despues de unos segundos su mirada vuelve a reposar sobre mi.
-???: Perdona. ¿Tienes alguna otra pregunta?
 => END
 
 ~ accusation_incorrect

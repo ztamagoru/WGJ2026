@@ -21,3 +21,11 @@ clue_name = &"wine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue" index="0" unique_id=1103100495]
 shape = SubResource("CircleShape2D_3fvi3")
+
+[node name="Clue2" type="Area2D" parent="Anchor/Body" index="1" unique_id=964045061]
+position = Vector2(82, -94.00001)
+script = ExtResource("3_n55gr")
+clue_name = &"book"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue2" index="0" unique_id=760046533]
+shape = SubResource("CircleShape2D_3fvi3")

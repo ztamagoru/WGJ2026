@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://3y75ehkqckrl"
+path="res://.godot/imported/gymbro.dialogue-638b0e22349f7ce6f1f7b4b1d2252518.tres"
+
+[deps]
+
+source_file="res://resources/bachelors/gymbro/gymbro.dialogue"
+dest_files=["res://.godot/imported/gymbro.dialogue-638b0e22349f7ce6f1f7b4b1d2252518.tres"]
+
+[params]
+
+defaults=true

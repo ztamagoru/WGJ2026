@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://w0e6oj185bag"
+path="res://.godot/imported/principe.dialogue-29202b7cf3e9838c001bd4c81cc96862.tres"
+
+[deps]
+
+source_file="res://resources/bachelors/principe/principe.dialogue"
+dest_files=["res://.godot/imported/principe.dialogue-29202b7cf3e9838c001bd4c81cc96862.tres"]
+
+[params]
+
+defaults=true

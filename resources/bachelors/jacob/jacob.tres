@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_l3rso"]
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="2_7351e"]
 [ext_resource type="Texture2D" uid="uid://ceo15j5hbmdhd" path="res://assets/bachelors/icons/Yakov.png" id="2_kxuy8"]
+[ext_resource type="Resource" uid="uid://bp7lgo5cysd8a" path="res://resources/bachelors/jacob/jacob.dialogue" id="2_yeq34"]
 
 [resource]
 script = ExtResource("2_7351e")
@@ -11,4 +12,5 @@ id = &"jacob"
 name = "Yakob"
 icon = ExtResource("2_kxuy8")
 portrait = ExtResource("1_gm7mf")
+dialogue = ExtResource("2_yeq34")
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

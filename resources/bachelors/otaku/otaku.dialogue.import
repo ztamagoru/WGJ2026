@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://xaklkajcq8kn"
+path="res://.godot/imported/otaku.dialogue-e087348e3b0f2d5bf6387c689fe76033.tres"
+
+[deps]
+
+source_file="res://resources/bachelors/otaku/otaku.dialogue"
+dest_files=["res://.godot/imported/otaku.dialogue-e087348e3b0f2d5bf6387c689fe76033.tres"]
+
+[params]
+
+defaults=true

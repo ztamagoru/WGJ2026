@@ -26,7 +26,7 @@ El extraño mueve un poquito la cadera
 ???: Un sujeto muy interesante y pasante...
 ???: ¡Su disfraz de pañuelo me parece muy peculiar!
 ???: Lo vi chocarse con alguien, el muchacho vestido de colegialo.
-$> CluesManager.unlock_clue("fantasma", "wine")
+#$> CluesManager.unlock_clue("alien", "wine_fantasma")
 => post_question
 
 ~ question_gymbro
@@ -35,7 +35,7 @@ $> CluesManager.unlock_clue("fantasma", "wine")
 ???: Como las aves, tiene un llamado de apareamiento bastante peculiar...
 ???: ¡Y solo aparenta atraer parejas del mismo género! Curioso...
 El extraño procede a anotar algo en su libreto.
-$> CluesManager.unlock_clue("gymbro", "phone")
+$> CluesManager.unlock_clue("alien", "phone_gymbro")
 => post_question
 
 ~ question_otaku
@@ -44,7 +44,7 @@ $> CluesManager.unlock_clue("gymbro", "phone")
 ???: Lo vi hablarse a si mismo y anotar cosas en su libreto negro
 => post_question
 
-~ question_killer
+~ question_principe
 ???: ¡Inspirador! Un hombre atractivo, cuidadoso y social.
 ???: Sobresaliente, anoté mucho sobre el en mi cuaderno.
 => post_question
@@ -56,7 +56,7 @@ $> CluesManager.unlock_clue("gymbro", "phone")
 ???: ¡Tiene un olor horrendo! ¿Casi como que de orina?
 ???: Hace unos momentos me acerqué y le pregunté al man porqué era eso, y me dijo que se salpicó un poco mientras "marcaba su territorio"
 ???: ¡Definitivamente tomé nota de eso! Extremadamente peculiar.
-$> CluesManager.unlock_clue("jacob", "animal")
+$> CluesManager.unlock_clue("alien", "animal_jacob")
 => post_question
 
 ~ post_question
@@ -103,10 +103,17 @@ De repente se quedan quietos mirando derecho para adelante, y despues de unos se
 => END
 
 ~ accusation_incorrect
+???: ¿En que idioma hablás nena chiquita niña? No es uno que conozca... Interesante....
 => END
 
 ~ chosen
+El extraño te lleva al medio de un campo, y antes de que puedas decir algo al respecto, ¡un OVNI aparece encima tuyo y te empieza a levantar al cielo!
+¡Terminaste siendo experimentada por alienigenas!
 => END
 
 ~ rejected
+???: ¿Rechazo? ¡Ese es un concepto nuevo!
+???: Y aparenta con el traer una emoción: ¡Tristeza!
+???: BWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+El extraño sale corriendo de la habitación, dejando sus lagrimas verdes por todos lados.
 => END

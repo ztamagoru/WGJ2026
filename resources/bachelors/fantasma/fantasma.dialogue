@@ -1,26 +1,27 @@
 ~ start
-Fue difícil encontrar la dirección de sus ojos. Aunque cuando los encontré, me distraje con el tambaleo de sus manos que comenzó de manera repentina. 
-Fantasma: U-Uh! Disculpa, no quería meterme en tu paso. 
-Fantasma: ¿Qué? ¿Qué querés hablar conmigo? 
+Fue difícil encontrar la dirección de sus ojos. Aunque cuando los encontré, los desvió completamente. 
+Fantasma: Disculpa, no quería meterme en tu paso. 
+Fantasma: ¿Qué? ¿Qué quieres hablar conmigo? 
 El extraño comenzó a jugar con sus manos, intentando calmarse.
-Fantasma: Porfavor no preguntes sobre mi nombre, me gusta estar de incógnito aquí. 
+Fantasma: No preguntes sobre mi nombre, me gusta estar de incógnito aquí. 
+
+
 => END
 
 # ----------
 
 ~ question_costume
-Fantasma: Te he dicho… Me gusta estar de incógnito aquí.
-Fantasma: Un lugar donde nadie te conoce… por fin puedo interactuar sin miedo.
-Fantasma: A-Aunque me cueste..
+Fantasma: T-te lo dije. Me gusta estar de incógnito aquí. Me gusta que nadie sepa quien soy. 
 => END
 
 ~ question_personal
 Fantasma: ...
-Fantasma: U-uh.. que insistente eres..
-Fantasma: Me llamo *NOMBRE*.
-Fantasma: Yo pen´se que era buena idea venir aquí y conocer amigos nuevos.
+Fantasma: Que insistente eres..
+Fantasma: Llámame fantasma. 
+Fantasma: Yo pensé que era buena idea venir aquí y conocer amigos nuevos.
 Fantasma: Pero c-creo que soy muy tímido para esto.
-El fantasma se frota los ojos con sus manos temblorosas
+
+
 => END
 
 ~ question_fantasma
@@ -30,38 +31,52 @@ Fantasma: Se que esta fiesta está llena de personajes, pero no soy tan especial
 => post_question
 
 ~ question_gymbro
+Fantasma: No lo conozco pero apenas lo vi noté sus músculos, se ve que trabaja duro.
+Fantasma: Aunque también es un poco aterrador. 
 => post_question
 
 ~ question_otaku
+Fantasma: Me daría mucha vergüenza ser como él…
 => post_question
 
-~ question_killer
+~ question_principe
+Fantasma: Es muy sociable y chismoso. 
+Fantasma: Solamente se la pasó hablando con gente, no se movió de la pista de baile.
+Fantasma: Para alguien que no tomó ni una gota de alcohol se maneja muy bien socialmente
+$> CluesManager.unlock_clue("fantasma", "wine_principe")
 => post_question
 
 ~ question_alien
-Fantasma: Dice haber perdido sus dedos en un accidente, pero lo conozco, y n-no es verdad...
-Fantasma: ¿Me pregunto porque mentirá?
-$> CluesManager.unlock_clue("fantasma", "fingers_alien")
+Fantasma:  Uhg! si podria ponerle a alguien mi disfraz, sería a él
+Fantasma: Su piel, su cuerpo es tan raro… 
+El fantasma dio un espasmo 
+=> post_question
+
+~ question_jacob
+Fantasma: Shh! No me deja que de información de él. 
+Fantasma: Es muy… reservado mi amigo. 
+Fantasma: A veces solamente lo acompaño a lugares para que no se meta en problemas.
 => post_question
 
 # ----------
 
 ~ post_question
+Fantasma: No creo que sea buena compañia… pero si te sientes cómoda, que-quédate.. digo si quieres! eh, yo no tengo problema. 
 => END
 
 # ----------
 
 ~ investigation_wine
-Principe: ¿Eso? ¡Eso es una simple y normal mancha de vino!
-Principe: Puede que mi aparencia regal no lo aparente, pero verdaderamente soy un poco descuidado...
-Principe: Me choqué con dos fulanitos que, francamente, son pequeños pobrecitos comparados con mi presencia.
+Fantasma: -Pensaba que el alcohol iba a relajarme más.. 
+Fantasma: Pero ahora estoy peor porque estoy nervioso pensando lo que hago borracho
+Se intenta tapar la mancha con la mano 
 => END
 
 ~ investigation_book
 Fantasma: A-aveces tartamudeo tanto que la gente no me entiende y..
 Fantasma: Debo anotar las cosas que quiero decir
-Abre su libreta y escribe en su primera pagina un “Hola!”
-Fantasma: C-Contigo no hubo falta de usarlo…
+Abre su libreta y escribe en su primera página un “Hola!”
+Fantasma: Con vos a tu lado no hace falta usarlo… 
 => END
 
 # ----------
@@ -70,15 +85,27 @@ Fantasma: C-Contigo no hubo falta de usarlo…
 => END
 
 ~ accusation_incorrect
+Fantasma: Q-Que.. No...
+El fantasma tiembla, parece que se va a desvanecer de la vergüenza
 => END
 
 # ----------
 
 ~ chosen
+Se destapa un poco su traje para verte mejor y al mismo tiempo aprovechar para tomar un poco de bebida. 
+Fantasma: Gracias por pasar tanto tiempo conmigo aquí, la verdad me siento muy cómodo hablando.
+Fantasma: Puedes darme tu número? 
+Un leve sonrojo se hizo notar
+Por parte de ambos.
+…
+La fiesta nunca terminó para ellos.
+El fantasma nunca volvió a tartamudear y la chica dejó de buscar. 
+Y colorín colorado este cuento se ha terminado. 
 $> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected
-Fantasma: bye.
+Fantasma: Esta.. b-bien, entiendo.
+Triste. El fantasma se dio la vuelta para desvanecerse entre la fiesta. 
 $> BachelorManager.reject_bachelor()
 => END

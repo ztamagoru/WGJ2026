@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bp7lgo5cysd8a"
+path="res://.godot/imported/jacob.dialogue-d889b292714ef5db4f7cc6dc94d9baf6.tres"
+
+[deps]
+
+source_file="res://resources/bachelors/jacob/jacob.dialogue"
+dest_files=["res://.godot/imported/jacob.dialogue-d889b292714ef5db4f7cc6dc94d9baf6.tres"]
+
+[params]
+
+defaults=true

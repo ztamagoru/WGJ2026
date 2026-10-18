@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_evqgw"]
 [ext_resource type="Texture2D" uid="uid://xawa4ekwyhau" path="res://assets/bachelors/icons/Otaku.png" id="2_6ri4h"]
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="2_21a77"]
+[ext_resource type="Resource" uid="uid://xaklkajcq8kn" path="res://resources/bachelors/otaku/otaku.dialogue" id="2_wfcie"]
 
 [resource]
 script = ExtResource("2_21a77")
@@ -11,4 +12,5 @@ id = &"otaku"
 name = "Kura"
 icon = ExtResource("2_6ri4h")
 portrait = ExtResource("1_88ko5")
+dialogue = ExtResource("2_wfcie")
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

@@ -18,10 +18,13 @@
 ~ question_otaku
 => post_question
 
-~ question_killer
+~ question_principe
 => post_question
 
 ~ question_alien
+=> post_question
+
+~ question_jacob
 => post_question
 
 ~ post_question
@@ -58,7 +61,9 @@
 => END
 
 ~ chosen
+$> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected
+$> BachelorManager.reject_bachelor()
 => END
