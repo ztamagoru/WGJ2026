@@ -18,10 +18,6 @@ offset_right = 18.0
 offset_bottom = 31.0
 text = "X"
 
-[node name="PortraitHolder" type="Marker2D" parent="." unique_id=1024724931]
-position = Vector2(320, 480)
-scale = Vector2(2, 2)
-
 [node name="Question" type="Button" parent="." unique_id=253007123]
 layout_mode = 1
 anchors_preset = 7
@@ -29,11 +25,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -51.0
+offset_top = -31.0
+offset_right = 51.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "¡Cuestionar!"
+
+[node name="PortraitHolder" type="Marker2D" parent="." unique_id=1024724931]
+position = Vector2(320, 480)
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

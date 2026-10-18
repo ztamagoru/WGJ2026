@@ -17,8 +17,10 @@ func _ready() -> void:
 	slot_0.add_child(portrait)
 
 func _on_ask_pressed() -> void:
-	# Abrir ventana nueva con dos opciones:
-	# Preguntar sobre disfraz, preguntar sobre vida
+	# Abrir ventana nueva con tres opciones:
+	# Preguntar sobre disfraz, preguntar sobre vida, sobre personaje
+	# Al hacer click sobre personaje, aparece un grid con los iconos de los personajes
+	# y al hacer click en un personaje, le preguntas sobre ese personaje
 	pass
 
 

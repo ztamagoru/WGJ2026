@@ -34,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	
 	var desired_pos : Vector2 = intial_portrait_pos + Vector2(centered_mouse.x * 0.25, centered_mouse.y) * -5
 	portrait_holder.global_position = lerp(portrait_holder.global_position, desired_pos, 1 * delta)
+	portrait_holder.global_position.x = clampf(portrait_holder.global_position.x, 150, 640-150)
 	portrait_holder.global_position.y = clamp(portrait_holder.global_position.y, screen_size.y, INF)
 
 # --
