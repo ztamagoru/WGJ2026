@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BachelorResource" format=3 uid="uid://dyictc2gse17u"]
 
-[ext_resource type="PackedScene" uid="uid://luumjp4q1p7x" path="res://resources/bachelors/jacob.tscn" id="1_gm7mf"]
+[ext_resource type="PackedScene" uid="uid://luumjp4q1p7x" path="res://resources/bachelors/jacob/jacob.tscn" id="1_gm7mf"]
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_l3rso"]
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="2_7351e"]
 [ext_resource type="Texture2D" uid="uid://ceo15j5hbmdhd" path="res://assets/bachelors/icons/Yakov.png" id="2_kxuy8"]

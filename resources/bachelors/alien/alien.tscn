@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_dv18a"]
 [ext_resource type="Texture2D" uid="uid://ssp83fxtnhic" path="res://assets/bachelors/alien.png" id="2_n3oxn"]
 [ext_resource type="Script" uid="uid://bqxwfjnfc1wlf" path="res://scenes/dialogue/characters/clue_area.gd" id="3_n3oxn"]
+[ext_resource type="Texture2D" uid="uid://bfl0ni3wn4ihm" path="res://assets/Notas2.png" id="4_msbg7"]
+[ext_resource type="AudioStream" uid="uid://b1sj7emnh4gio" path="res://assets/sfx/grindr.mp3" id="5_hunux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01r6b"]
 atlas = ExtResource("2_n3oxn")
@@ -33,3 +35,20 @@ clue_name = &"fingers"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue2" index="0" unique_id=598168]
 shape = SubResource("CircleShape2D_001r8")
+
+[node name="Clue3" type="Area2D" parent="Anchor/Body" index="2" unique_id=1408572246]
+position = Vector2(-210, 110)
+script = ExtResource("3_n3oxn")
+clue_name = &"phone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/Body/Clue3" index="0" unique_id=855109788]
+shape = SubResource("CircleShape2D_001r8")
+
+[node name="GrindrSound" type="Sprite2D" parent="Anchor/Body/Clue3" index="1" unique_id=1753169930]
+scale = Vector2(0.31926715, 0.31926715)
+texture = ExtResource("4_msbg7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Anchor/Body/Clue3" index="2" unique_id=352667692]
+stream = ExtResource("5_hunux")
+
+[connection signal="mouse_entered" from="Anchor/Body/Clue3" to="Anchor/Body/Clue3/AudioStreamPlayer" method="play"]

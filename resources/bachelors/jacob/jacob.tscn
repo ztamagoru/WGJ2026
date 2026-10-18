@@ -2,9 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cucco71t3c7wg" path="res://resources/bachelors/portrait.tscn" id="1_bi2vk"]
 [ext_resource type="Texture2D" uid="uid://c83iq78pth2j1" path="res://assets/bachelors/Yakov.png" id="2_362pa"]
+[ext_resource type="Texture2D" uid="uid://bfl0ni3wn4ihm" path="res://assets/Notas2.png" id="3_362pa"]
 
 [node name="Portrait" unique_id=1572422149 instance=ExtResource("1_bi2vk")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
 position = Vector2(0, -494)
 texture = ExtResource("2_362pa")
+
+[node name="GrindrSound" type="Sprite2D" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="1" unique_id=1047581488]
+position = Vector2(-182, -136)
+scale = Vector2(0.31926715, 0.31926715)
+texture = ExtResource("3_362pa")

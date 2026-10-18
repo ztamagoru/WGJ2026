@@ -1,0 +1,112 @@
+~ start
+???:  Que onda, viejo ¿Todo viento?
+El extraño se mueve de manera rara enfrente mio, tambaleando de un lado a otro.
+???: ¿Que te pasa, calabaza? ¿Todo bien, discotek?
+???: ¡Un gusto conocerte! Especialmente cuando el mar esta así de alto. ¡Cawabunga!
+=> END
+
+~ question_costume
+???: ¿De que estoy disfrazado? ¡Es re obvio, mariposa!
+El extraño apunta hacia si mismo.
+???: ¿No lo ves? 
+El extraño mueve un poquito la cadera
+???: Ugh, sos un bajón de alfajor. ¡Humano! ¡Estoy disfrazado de humano!
+???: Es re obvio encima. Boah.
+=> END
+
+~ question_personal
+???: ¿Que hay para decir? Soy un soñador ilusionador, constantemente viendo el cielo
+???: Especialmente cuando es de noche, ¿no son fascinantes las estrellas?
+
+=> END
+
+# -- Preguntas personajes --
+
+~ question_fantasma
+???: Un sujeto muy interesante y pasante...
+???: ¡Su disfraz de pañuelo me parece muy peculiar!
+???: Lo vi chocarse con alguien, el muchacho vestido de colegialo.
+$> CluesManager.unlock_clue("fantasma", "wine")
+=> post_question
+
+~ question_gymbro
+???: ¡Ah, el compadre del gymnasium!
+???: Está constantemente llamando a gente "bro", ¡así que debe tener muchos hermanos!
+???: Como las aves, tiene un llamado de apareamiento bastante peculiar...
+???: ¡Y solo aparenta atraer parejas del mismo género! Curioso...
+El extraño procede a anotar algo en su libreto.
+$> CluesManager.unlock_clue("gymbro", "phone")
+=> post_question
+
+~ question_otaku
+???: ¡Un rarito manito!
+???: (Susurrando) ¿A lo mejor está investigando como yo?
+???: Lo vi hablarse a si mismo y anotar cosas en su libreto negro
+=> post_question
+
+~ question_killer
+???: ¡Inspirador! Un hombre atractivo, cuidadoso y social.
+???: Sobresaliente, anoté mucho sobre el en mi cuaderno.
+=> post_question
+
+~ question_alien
+=> post_question
+
+~ question_jacob
+???: ¡Tiene un olor horrendo! ¿Casi como que de orina?
+???: Hace unos momentos me acerqué y le pregunté al man porqué era eso, y me dijo que se salpicó un poco mientras "marcaba su territorio"
+???: ¡Definitivamente tomé nota de eso! Extremadamente peculiar.
+$> CluesManager.unlock_clue("jacob", "animal")
+=> post_question
+
+~ post_question
+???: Interesante, nunca vi a alguien hacer una pregunta tan peculiar. Lo tengo que anotar.
+=> END
+
+# -- Investigación objetos --
+# Añadir objetos que tiene el personaje, acá uso el fantasma como referencia
+# que solo tiene la mancha de vino y el libro negro
+
+~ investigation_wine
+=> END
+
+~ investigation_book
+???: Mi diario es donde anoto cosas sobre la gente peculiar que conozco.
+???: Por ejemplo, acá tengo anotado de ti "Pregunta demasiadas cosas".
+???: ¡Solo anoto actitudes peculiares! Entre tu y yo, estoy llevando a cabo una investigación. Un estudio. No puedo revelar porque.
+=> END
+
+~ investigation_phone
+???: Ah, ¿ese sonido? Es el sonido de apareamiento del vaquero
+???: Me pareció interesante, así que lo adapté a mi persona. A lo mejor así logro conocer nuevos sujetos de prueb- digo, ¡Amigos!
+=> END
+
+~ investigation_fingers
+???: ¡¿Mis dedos?! ¡Mis dedos son perfectamente normal-!
+???: Digo- Digo, ¡lo serían! Si no fuese porque los perdí en ese... ¡Accidente Tragico!
+$> CluesManager.unlock_clue("alien", "fingers")
+=> END
+
+~ investigation_bite
+=> END
+
+# -- Acusaciones --
+
+~ accusation_correct
+???: ¿Que no estuve en ningún accidente tragico?
+???: ¡F-Falacias! ¡Mentiras! ¡N-n-no se de que hablas!
+???: Zirp zlorp glirp glorp glorp zorp
+???: Aaaaabababababaaaaaaaaa
+Los ojos del extraño se empiezan a mover por todos lados.
+De repente se quedan quietos mirando derecho para adelante, y despues de unos segundos su mirada vuelve a reposar sobre mi.
+???: Perdona. ¿Tienes alguna otra pregunta?
+=> END
+
+~ accusation_incorrect
+=> END
+
+~ chosen
+=> END
+
+~ rejected
+=> END
