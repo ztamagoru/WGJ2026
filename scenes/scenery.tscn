@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://csildgtravgrj"]
 
 [ext_resource type="PackedScene" uid="uid://ylb2t67smmad" path="res://assets/scenery/Pumpking_Environment.blend" id="1_abopq"]
+[ext_resource type="Script" uid="uid://brt7ih1lcl7t7" path="res://scenes/actor.gd" id="2_0kx6y"]
+[ext_resource type="Texture2D" uid="uid://dvccdabwuvobw" path="res://assets/scenery/Actors.png" id="2_80pdw"]
+[ext_resource type="Texture2D" uid="uid://qjdm7t5eql2l" path="res://assets/Circle.png" id="3_0kx6y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rjw42"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +20,14 @@ ambient_light_color = Color(0.5647059, 0.39215687, 1, 1)
 ambient_light_energy = 0.2
 glow_enabled = true
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbwj1"]
+radius = 0.30273438
+height = 1.0957031
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbwj1"]
+atlas = ExtResource("2_80pdw")
+region = Rect2(671, 562, 290, 482)
+
 [node name="Scenery" type="Node3D" unique_id=623291719]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=71922440]
@@ -24,31 +35,31 @@ environment = SubResource("Environment_tkx72")
 
 [node name="Pumpking_Environment" parent="." unique_id=1152524233 instance=ExtResource("1_abopq")]
 
-[node name="Area" parent="Pumpking_Environment" index="3" unique_id=621107637]
+[node name="Area" parent="Pumpking_Environment" index="3" unique_id=677187302]
 transform = Transform3D(0.31067026, 0.23677562, 0.9205549, -0.9497458, 0.03830104, 0.31067023, 0.03830093, -0.9708091, 0.23677564, 5.675269, 1.7750361, -1.4901649)
 light_color = Color(1, 0.68235296, 0.3529412, 1)
 shadow_enabled = true
 shadow_blur = 1.5
 
-[node name="Area_001" parent="Pumpking_Environment" index="4" unique_id=711790222]
+[node name="Area_001" parent="Pumpking_Environment" index="4" unique_id=1425474899]
 transform = Transform3D(0.43451795, 0.25374907, 0.8641792, -0.900626, 0.13112254, 0.41434237, -0.008174389, -0.9583415, 0.28550813, 5.675269, 1.9382821, 1.2797352)
 light_color = Color(1, 0.68235296, 0.3529412, 1)
 shadow_enabled = true
 shadow_blur = 1.5
 
-[node name="Area_002" parent="Pumpking_Environment" index="5" unique_id=479628613]
+[node name="Area_002" parent="Pumpking_Environment" index="5" unique_id=1979455268]
 transform = Transform3D(-0.059110872, -0.8516215, -0.5208136, -0.9979693, 0.06281443, 0.010554137, 0.023726474, 0.5203799, -0.8536052, -1.7033852, 2.2042599, -1.8812646)
 light_color = Color(1, 0.84313726, 0, 1)
 shadow_enabled = true
 shadow_blur = 1.5
 
-[node name="Area_003" parent="Pumpking_Environment" index="6" unique_id=1086235690]
+[node name="Area_003" parent="Pumpking_Environment" index="6" unique_id=2041074951]
 transform = Transform3D(0.028945863, -0.997671, 0.06176209, -0.9994762, -0.027993152, 0.016235622, -0.014468893, -0.06219969, -0.9979589, 0.94407654, 2.5900261, -3.185995)
 light_color = Color(1, 0.40784314, 0, 1)
 shadow_enabled = true
 shadow_blur = 1.5
 
-[node name="Area_004" parent="Pumpking_Environment" index="7" unique_id=352779713]
+[node name="Area_004" parent="Pumpking_Environment" index="7" unique_id=252087469]
 transform = Transform3D(-0.032575253, 0.64572054, -0.76287866, 0.99796945, 0.06281449, 0.010554104, -0.054734834, 0.76098573, 0.6464556, -2.894679, 2.2042599, 9.148435)
 light_color = Color(0.5647059, 0.39215687, 1, 1)
 light_energy = 1.645
@@ -57,7 +68,7 @@ shadow_blur = 1.5
 area_range = 21.365
 area_size = Vector2(3, 3)
 
-[node name="Area_005" parent="Pumpking_Environment" index="8" unique_id=961475718]
+[node name="Area_005" parent="Pumpking_Environment" index="8" unique_id=41223047]
 transform = Transform3D(-0.0013040304, -0.99402416, 0.10915293, 0.99984807, 0.00060120155, 0.017419973, 0.017381497, -0.109159075, -0.9938723, 1.7208662, 2.2836175, -10.466318)
 light_color = Color(0.29803923, 0.45490196, 1, 1)
 light_energy = 1.317
@@ -68,5 +79,22 @@ area_range = 35.22
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2015678937]
 transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 11, 15)
 fov = 30.0
+
+[node name="Actor" type="CharacterBody3D" parent="." unique_id=1638797024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35466695, 0, 1.9666986)
+script = ExtResource("2_0kx6y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actor" unique_id=175231549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54785156, 0)
+shape = SubResource("CapsuleShape3D_fbwj1")
+
+[node name="Sprite3D" type="Sprite3D" parent="Actor" unique_id=1906898461]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.5, 0)
+texture = SubResource("AtlasTexture_fbwj1")
+
+[node name="Decal" type="Decal" parent="Actor" unique_id=103725588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.011581421, 0)
+size = Vector3(1, 0.164, 0.5)
+texture_albedo = ExtResource("3_0kx6y")
 
 [editable path="Pumpking_Environment"]
