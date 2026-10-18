@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bidnx3x24ftdl" path="res://resources/bachelors/gymbro.tscn" id="1_qx0hm"]
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="1_uvtfv"]
 [ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_xosqw"]
+[ext_resource type="Texture2D" uid="uid://didp0ek6kwal1" path="res://assets/bachelors/icons/Perfil Vaquero.png" id="2_sfpvj"]
 
 [sub_resource type="Resource" id="Resource_001r8"]
 script = ExtResource("1_xosqw")
@@ -11,7 +12,8 @@ metadata/_custom_type_script = "uid://c7o1desoktjqk"
 [resource]
 script = ExtResource("1_uvtfv")
 id = &"gymbro"
-name = "Gymbro"
+name = "Vaquero"
+icon = ExtResource("2_sfpvj")
 portrait = ExtResource("1_qx0hm")
 clues = Array[ExtResource("1_xosqw")]([SubResource("Resource_001r8")])
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"

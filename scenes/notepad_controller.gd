@@ -3,14 +3,15 @@ class_name NotepadController
 
 # --
 
-@onready var bachelor_name_label : Label		= $VBoxContainer/HBoxContainer/VBoxContainer/BachelorName
-@onready var bachelor_description_label : Label = $VBoxContainer/HBoxContainer/VBoxContainer/BachelorDescription
-@onready var bachelor_icon : TextureRect		= $VBoxContainer/HBoxContainer/MarginContainer/BachelorIcon
+@onready var bachelor_name_label : Label		= $BachelorName
+@onready var bachelor_description_label : Label = $BachelorDescription
+@onready var bachelor_tidbit_label : Label		= $BachelorTidbit
+@onready var bachelor_icon : TextureRect		= $BachelorIcon
 
-@onready var previous_bachelor_button : Button	= $VBoxContainer/HBoxContainer2/PreviousBachelorButton
-@onready var next_bachelor_button : Button		= $VBoxContainer/HBoxContainer2/NextBachelorButton
+@onready var previous_bachelor_button : BaseButton	= $LeftButton
+@onready var next_bachelor_button : BaseButton		= $RightButton
 
-@onready var clues_container : HFlowContainer	= $VBoxContainer/MarginContainer/ScrollContainer/CluesContainer
+@onready var clues_container : Container	= $ScrollContainer/VBoxContainer
 
 # --
 
@@ -40,7 +41,7 @@ func _update_page() -> void:
 	
 	bachelor_name_label.text = current_bachelor.name
 	bachelor_description_label.text = current_bachelor.description
-	if not current_bachelor.icon == null: bachelor_icon.texture = current_bachelor.icon
+	if current_bachelor.icon != null: bachelor_icon.texture = current_bachelor.icon
 	
 	var bachelor_clues : Array[String] = CluesManager.get_clues(current_bachelor.id)
 	if bachelor_clues.is_empty(): return

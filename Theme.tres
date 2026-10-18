@@ -17,6 +17,7 @@ content_margin_bottom = 15.0
 texture = ExtResource("4_y2aw4")
 
 [resource]
+default_font = ExtResource("1_j4jqe")
 Button/fonts/font = ExtResource("1_j4jqe")
 Button/styles/focus = SubResource("StyleBoxTexture_coqoy")
 Button/styles/hover = SubResource("StyleBoxTexture_coqoy")
@@ -25,6 +26,7 @@ Button/styles/pressed = SubResource("StyleBoxTexture_coqoy")
 DialogueLabel/base_type = &"RichTextLabel"
 DialogueLabel/font_sizes/normal_font_size = 25
 DialogueLabel/fonts/normal_font = ExtResource("3_t6dyh")
+Label/fonts/font = ExtResource("1_j4jqe")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_4v7yn")
 RichTextLabel/font_sizes/normal_font_size = 20
 RichTextLabel/fonts/normal_font = ExtResource("3_t6dyh")

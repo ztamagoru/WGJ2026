@@ -4,10 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://b8xtn12qofqb6" path="res://scenes/investigation_screen.tscn" id="1_rd2jb"]
 [ext_resource type="Texture2D" uid="uid://d0r04lhu8jqtm" path="res://assets/ui/Libreta base.png" id="3_d0rdw"]
 [ext_resource type="Script" uid="uid://bda3gwikmp5qf" path="res://scenes/notepad_controller.gd" id="3_fk6bu"]
-[ext_resource type="Texture2D" uid="uid://d3mx2adunhbs2" path="res://assets/bachelors/fantasmin.png" id="3_wbr8c"]
+[ext_resource type="Texture2D" uid="uid://didp0ek6kwal1" path="res://assets/bachelors/icons/Perfil Vaquero.png" id="5_ag51i"]
+[ext_resource type="FontFile" uid="uid://cb4hh5bt0rf5i" path="res://assets/ui/Jersey25-Regular.ttf" id="6_3v3qm"]
+[ext_resource type="FontFile" uid="uid://bfngaqpot66e" path="res://assets/ui/Yuyu-Regular.ttf" id="7_ljh32"]
+[ext_resource type="Texture2D" uid="uid://bwu26a6jjptjx" path="res://assets/ui/Boton eleccion de perfil izq.png" id="8_ljh32"]
+[ext_resource type="Texture2D" uid="uid://dvpmk3ndm7bru" path="res://assets/ui/Boton eleccion de perfil Der.png" id="9_vhbfe"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fbwj1"]
+[sub_resource type="LabelSettings" id="LabelSettings_3n7sl"]
+font = ExtResource("6_3v3qm")
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhbfe"]
+font = ExtResource("6_3v3qm")
 font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x0de7"]
+font = ExtResource("7_ljh32")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
 [node name="DecisionScreen" type="CanvasLayer" unique_id=920126564]
 script = ExtResource("1_m610q")
@@ -116,7 +132,7 @@ visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -190.0
+offset_left = -152.0
 offset_bottom = 233.0
 grow_horizontal = 0
 texture = ExtResource("3_d0rdw")
@@ -124,74 +140,110 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("3_fk6bu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Notepad" unique_id=58927863]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Notepad/VBoxContainer" unique_id=175243347]
-custom_minimum_size = Vector2(0, 50.305)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Notepad/VBoxContainer/HBoxContainer" unique_id=762685563]
-custom_minimum_size = Vector2(38.255, 0)
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BachelorIcon" type="TextureRect" parent="Notepad/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1291460013]
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 27.93)
-offset_transform_scale = Vector2(2, 2)
-texture = ExtResource("3_wbr8c")
+[node name="BachelorIcon" type="TextureRect" parent="Notepad" unique_id=1416997527]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 70.0
+offset_bottom = 88.0
+texture = ExtResource("5_ag51i")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Notepad/VBoxContainer/HBoxContainer" unique_id=1695645515]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="BachelorName" type="Label" parent="Notepad" unique_id=13095908]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 18.0
+offset_right = 122.0
+offset_bottom = 41.0
+text = "Nombre"
+label_settings = SubResource("LabelSettings_3n7sl")
 
-[node name="BachelorName" type="Label" parent="Notepad/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1555722122]
-layout_mode = 2
-text = "NOMBRE"
-
-[node name="BachelorDescription" type="Label" parent="Notepad/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1601677752]
-layout_mode = 2
+[node name="BachelorDescription" type="Label" parent="Notepad" unique_id=158861535]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = 29.0
+offset_right = -17.0
+offset_bottom = 53.0
+grow_horizontal = 0
 text = "Descripción"
-label_settings = SubResource("LabelSettings_fbwj1")
-autowrap_mode = 1
+label_settings = SubResource("LabelSettings_vhbfe")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Notepad/VBoxContainer" unique_id=1625147477]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
+[node name="BachelorTidbit" type="Label" parent="Notepad" unique_id=1388314130]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = 52.0
+offset_right = -17.0
+offset_bottom = 86.0
+grow_horizontal = 0
+text = "Tidbit"
+label_settings = SubResource("LabelSettings_x0de7")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Notepad/VBoxContainer/MarginContainer" unique_id=764584370]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="CluesTitle" type="Label" parent="Notepad" unique_id=1629876517]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -19.5
+offset_right = 75.0
+offset_bottom = 3.5
+grow_vertical = 2
+text = "Pistas"
+label_settings = SubResource("LabelSettings_3n7sl")
 
-[node name="CluesContainer" type="HFlowContainer" parent="Notepad/VBoxContainer/MarginContainer/ScrollContainer" unique_id=1207459790]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="ScrollContainer" type="ScrollContainer" parent="Notepad" unique_id=436864756]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -121.0
+offset_right = -10.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Notepad/VBoxContainer" unique_id=585312576]
+[node name="VBoxContainer" type="VBoxContainer" parent="Notepad/ScrollContainer" unique_id=1783570722]
 layout_mode = 2
 
-[node name="PreviousBachelorButton" type="Button" parent="Notepad/VBoxContainer/HBoxContainer2" unique_id=1904065610]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "<"
+[node name="LeftButton" type="TextureButton" parent="Notepad" unique_id=767316899]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -58.0
+offset_right = 75.000015
+offset_bottom = -12.0
+grow_vertical = 0
+texture_normal = ExtResource("8_ljh32")
 
-[node name="NextBachelorButton" type="Button" parent="Notepad/VBoxContainer/HBoxContainer2" unique_id=385905171]
-layout_mode = 2
-size_flags_horizontal = 3
-text = ">"
+[node name="RightButton" type="TextureButton" parent="Notepad" unique_id=59783257]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -67.015
+offset_top = -58.0
+offset_right = -27.015
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("9_vhbfe")
 
 [connection signal="pressed" from="Screen/MarginContainer/InitialQuestions/Ask" to="." method="_on_ask_pressed"]
 [connection signal="pressed" from="Screen/MarginContainer/InitialQuestions/Investigate" to="." method="_on_investigate_pressed"]

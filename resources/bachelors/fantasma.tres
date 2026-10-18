@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://boq17sd0ydkdh" path="res://resources/bachelors/bachelor_resource.gd" id="1_ed03k"]
 [ext_resource type="Resource" uid="uid://c6vn8s8jty3g0" path="res://dialogue/fantasma.dialogue" id="1_ol7da"]
+[ext_resource type="Script" uid="uid://c7o1desoktjqk" path="res://resources/clues/clue.gd" id="1_xhmes"]
 [ext_resource type="PackedScene" uid="uid://nmhxhd6c65w1" path="res://resources/bachelors/fantasma.tscn" id="2_dob1b"]
+[ext_resource type="Texture2D" uid="uid://blipyvcchufvh" path="res://assets/bachelors/icons/Fantasmin.png" id="3_xm5qc"]
 
 [resource]
 script = ExtResource("1_ed03k")
 id = &"fantasma"
 name = "Fantasma"
+icon = ExtResource("3_xm5qc")
 portrait = ExtResource("2_dob1b")
 dialogue = ExtResource("1_ol7da")
 metadata/_custom_type_script = "uid://boq17sd0ydkdh"
