@@ -14,6 +14,7 @@ var current_decision_screen : DecisionScreen
 
 const BACHELORS_PATH : String = "res://resources/bachelors/"
 
+var all_bachelors : Array[BachelorResource] = []
 var bachelors : Array[BachelorResource] = []
 
 var current_bachelor : BachelorResource:
@@ -48,12 +49,12 @@ func _load_bachelors_from_directory(path : String) -> void:
 			continue
 		
 		var resource : Resource = load(entry_path)
-		if resource is BachelorResource: bachelors.append(resource)
+		if resource is BachelorResource: all_bachelors.append(resource)
 
 # --
 
 func get_bachelor(bachelor_id : StringName) -> BachelorResource:
-	for bachelor in bachelors:
+	for bachelor in all_bachelors:
 		if bachelor.id == bachelor_id: return bachelor
 	
 	return null
@@ -61,10 +62,11 @@ func get_bachelor(bachelor_id : StringName) -> BachelorResource:
 # --
 
 func start_speed_dating() -> void:
-	if bachelors.is_empty():
+	if all_bachelors.is_empty():
 		push_error("BACHELOR MANAGER: No bachelors loaded.")
 		return
 	
+	bachelors = all_bachelors
 	bachelors.shuffle()
 	
 	speed_dating_started.emit()
