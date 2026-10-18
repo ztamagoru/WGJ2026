@@ -15,8 +15,8 @@ radius = 30.0
 clues = [NodePath("Anchor/Body/Clue"), NodePath("Anchor/Body/Clue2")]
 
 [node name="Body" parent="Anchor" parent_id_path=PackedInt32Array(1904954016) index="0" unique_id=145401990]
-position = Vector2(0, -111)
-scale = Vector2(0.25, 0.25)
+position = Vector2(0, -187)
+scale = Vector2(0.45, 0.45)
 texture = SubResource("AtlasTexture_ycqm5")
 
 [node name="Clue" type="Area2D" parent="Anchor/Body" index="0" unique_id=769306162]

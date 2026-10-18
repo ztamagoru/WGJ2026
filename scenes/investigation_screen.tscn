@@ -20,7 +20,7 @@ text = "X"
 
 [node name="PortraitHolder" type="Marker2D" parent="." unique_id=1024724931]
 position = Vector2(320, 480)
-scale = Vector2(5, 5)
+scale = Vector2(2, 2)
 
 [node name="Question" type="Button" parent="." unique_id=253007123]
 layout_mode = 1

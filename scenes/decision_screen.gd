@@ -11,7 +11,7 @@ class_name DecisionScreen
 # --
 
 func _ready() -> void:
-	var current_bachelor := BachelorManager.current_bachelor
+	var current_bachelor = BachelorManager.current_bachelor
 	
 	var portrait := current_bachelor.portrait.instantiate() as BachelorPortait
 	slot_0.add_child(portrait)
