@@ -117,7 +117,7 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Notepad/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1291460013]
+[node name="BachelorIcon" type="TextureRect" parent="Notepad/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1291460013]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 27.93)
@@ -130,11 +130,11 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Notepad/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1555722122]
+[node name="BachelorName" type="Label" parent="Notepad/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1555722122]
 layout_mode = 2
 text = "NOMBRE"
 
-[node name="Label2" type="Label" parent="Notepad/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1601677752]
+[node name="BachelorDescription" type="Label" parent="Notepad/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1601677752]
 layout_mode = 2
 text = "Descripción"
 label_settings = SubResource("LabelSettings_fbwj1")
@@ -150,7 +150,7 @@ theme_override_constants/margin_right = 5
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HFlowContainer" type="HFlowContainer" parent="Notepad/VBoxContainer/MarginContainer/ScrollContainer" unique_id=1207459790]
+[node name="CluesContainer" type="HFlowContainer" parent="Notepad/VBoxContainer/MarginContainer/ScrollContainer" unique_id=1207459790]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -158,12 +158,12 @@ size_flags_vertical = 3
 [node name="HBoxContainer2" type="HBoxContainer" parent="Notepad/VBoxContainer" unique_id=585312576]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Notepad/VBoxContainer/HBoxContainer2" unique_id=1904065610]
+[node name="PreviousBachelorButton" type="Button" parent="Notepad/VBoxContainer/HBoxContainer2" unique_id=1904065610]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "<"
 
-[node name="Button2" type="Button" parent="Notepad/VBoxContainer/HBoxContainer2" unique_id=385905171]
+[node name="NextBachelorButton" type="Button" parent="Notepad/VBoxContainer/HBoxContainer2" unique_id=385905171]
 layout_mode = 2
 size_flags_horizontal = 3
 text = ">"
