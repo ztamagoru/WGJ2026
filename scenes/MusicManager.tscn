@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cxbjwuni6rrwn"]
+
+[ext_resource type="AudioStream" uid="uid://5ctxlyy6vg2x" path="res://assets/sfx/songs/main_menu.mp3" id="1_k17rw"]
+
+[node name="MusicManager" type="AudioStreamPlayer" unique_id=441112493]
+stream = ExtResource("1_k17rw")
+volume_db = -20.0
+autoplay = true

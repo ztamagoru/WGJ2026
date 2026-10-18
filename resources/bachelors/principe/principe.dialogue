@@ -1,11 +1,69 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+=> END
+
+~ question_costume
+=> END
+
+~ question_personal
+=> END
+
+# -- Preguntas personajes --
+
+~ question_fantasma
+=> post_question
+
+~ question_gymbro
+=> post_question
+
+~ question_otaku
+=> post_question
+
+~ question_principe
+=> post_question
+
+~ question_alien
+=> post_question
+
+~ question_jacob
+=> post_question
+
+~ post_question
+=> END
+
+# -- Investigación objetos --
+# Añadir objetos que tiene el personaje, acá uso el fantasma como referencia
+# que solo tiene la mancha de vino y el libro negro
+
+~ investigation_wine
+=> END
+
+~ investigation_book
+=> END
+
+~ investigation_phone
+=> END
+
+~ investigation_fingers
+=> END
+
+~ investigation_bite
+=> END
+
+~ investigation_glow
+=> END
+
+# -- Acusaciones --
+
+~ accusation_correct
+=> END
+
+~ accusation_incorrect
+=> END
+
+~ chosen
+$> BachelorManager.accept_bachelor()
+=> END
+
+~ rejected
+$> BachelorManager.reject_bachelor()
 => END
