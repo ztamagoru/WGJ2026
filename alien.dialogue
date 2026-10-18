@@ -65,7 +65,9 @@ De repente se quedan quietos mirando derecho para adelante, y despues de unos se
 => END
 
 ~ chosen
+$> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected
+$> BachelorManager.reject_bachelor()
 => END

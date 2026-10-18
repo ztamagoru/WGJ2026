@@ -20,7 +20,7 @@ const BACHELORS_PATH : String = "res://resources/bachelors/"
 var decision_screen : PackedScene = preload("res://scenes/decision_screen.tscn")
 var current_decision_screen : DecisionScreen
 
-var game_manager
+var scene_manager : SceneManager
 
 var all_bachelors : Array[BachelorResource] = []
 var bachelors : Array[BachelorResource] = []
@@ -40,8 +40,6 @@ func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(_bachelor_interaction)
 	
 	_load_bachelors_from_directory(BACHELORS_PATH)
-	
-	start_speed_dating()
 
 func _load_bachelors_from_directory(path : String) -> void:
 	var entries : PackedStringArray = ResourceLoader.list_directory(path)
@@ -90,22 +88,24 @@ func reject_bachelor() -> void:
 	bachelors.pop_front()
 	
 	if bachelors.is_empty():
-		if game_manager == null:
+		if scene_manager == null:
 			push_error("BACHELOR MANAGER: GameManager not assigned.")
 			return
-		game_manager.change_scene(ALONE_ENDING_SCENE)
+		
+		scene_manager.change_scene(ALONE_ENDING_SCENE)
+		return
 	
 	_set_new_bachelor()
 
 func accept_bachelor() -> void:
 	if current_bachelor == null: return
 	
-	if game_manager == null:
+	if scene_manager == null:
 		push_error("BACHELOR MANAGER: GameManager not assigned.")
 		return
 	
-	if current_bachelor.is_good_bachelor: game_manager.change_scene(GOOD_ENDING_SCENE)
-	else: game_manager.change_scene(BAD_ENDING_SCENE)
+	if current_bachelor.is_good_bachelor: scene_manager.change_scene(GOOD_ENDING_SCENE)
+	else: scene_manager.change_scene(BAD_ENDING_SCENE)
 	return 
 
 # --
@@ -141,7 +141,7 @@ func _set_new_bachelor() -> void:
 
 func _create_decision_scene() -> void:
 	current_decision_screen = decision_screen.instantiate() as DecisionScreen
-	get_tree().current_scene.add_child(current_decision_screen)
+	scene_manager.current_scene.add_child(current_decision_screen)
 	await get_tree().process_frame
 	current_decision_screen.choose_button.visible = (bachelors.size() == 1)
 

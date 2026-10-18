@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bd14nnc3uc0f7"]
+
+[ext_resource type="Script" uid="uid://6k8tqoyao23b" path="res://scenes/scene_manager.gd" id="1_we8k5"]
+
+[node name="SceneManager" type="Node3D" unique_id=25115302 node_paths=PackedStringArray("current_scene", "fade_layer")]
+script = ExtResource("1_we8k5")
+current_scene = NodePath("CurrentScene")
+fade_layer = NodePath("CanvasLayer/ColorRect")
+
+[node name="CurrentScene" type="Node3D" parent="." unique_id=1858770280]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2080989777]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1793078927]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

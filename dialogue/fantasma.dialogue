@@ -6,6 +6,8 @@ El extraño comenzó a jugar con sus manos, intentando calmarse.
 Fantasma: Porfavor no preguntes sobre mi nombre, me gusta estar de incógnito aquí. 
 => END
 
+# ----------
+
 ~ question_costume
 Fantasma: Te he dicho… Me gusta estar de incógnito aquí.
 Fantasma: Un lugar donde nadie te conoce… por fin puedo interactuar sin miedo.
@@ -42,8 +44,12 @@ Fantasma: ¿Me pregunto porque mentirá?
 $> CluesManager.unlock_clue("fantasma", "fingers_alien")
 => post_question
 
+# ----------
+
 ~ post_question
 => END
+
+# ----------
 
 ~ investigation_wine
 Principe: ¿Eso? ¡Eso es una simple y normal mancha de vino!
@@ -58,14 +64,21 @@ Abre su libreta y escribe en su primera pagina un “Hola!”
 Fantasma: C-Contigo no hubo falta de usarlo…
 => END
 
+# ----------
+
 ~ accusation_correct
 => END
 
 ~ accusation_incorrect
 => END
 
+# ----------
+
 ~ chosen
+$> BachelorManager.accept_bachelor()
 => END
 
 ~ rejected
+Fantasma: bye.
+$> BachelorManager.reject_bachelor()
 => END
