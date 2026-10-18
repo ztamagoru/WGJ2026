@@ -28,19 +28,17 @@ func _ready() -> void:
 
 # --
 
-func change_scene(scene : String, wait_timer : bool = false) -> void:
+func change_scene(scene : String) -> void:
 	await _fade(fade_mode.FADE_IN)
 	
 	for child in current_scene.get_children(): child.queue_free()
 	
+	await _fade(fade_mode.FADE_IN, fade_loading_icon, 0.5)
 	var new_scene = load(scene)
 	var scene_instance = new_scene.instantiate()
 	current_scene.add_child(scene_instance)
 	
-	if wait_timer:
-		await _fade(fade_mode.FADE_IN, fade_loading_icon, 0.5)
-		await get_tree().create_timer(randf_range(0.5, 1.5)).timeout
-		await _fade(fade_mode.FADE_OUT, fade_loading_icon, 0.5)
+	await _fade(fade_mode.FADE_OUT, fade_loading_icon, 0.5)
 	
 	if scene_instance.has_method("start_dating"): scene_instance.start_dating()
 	
