@@ -21,6 +21,8 @@ class_name DecisionScreen
 @onready var ask_life : Button			= $Screen/MarginContainer/SpecificQuestions/AskLife
 @onready var ask_about_someone : Button = $Screen/MarginContainer/SpecificQuestions/AskSomeoneElse
 
+@onready var choose_button : Button = $Screen/MarginContainer/InitialQuestions/Choose
+
 # --
 
 func _ready() -> void:
@@ -106,7 +108,7 @@ func _on_choose_pressed() -> void:
 
 
 func _on_reject_pressed() -> void:
-	pass
+	DialogueManager.show_dialogue_balloon(BachelorManager.current_bachelor.dialogue, "rejected")
 
 
 func _on_investigation_screen_exited() -> void:
