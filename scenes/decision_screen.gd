@@ -3,6 +3,10 @@ class_name DecisionScreen
 
 # --
 
+signal trans_out_finished
+
+# --
+
 @onready var screen : Control = $Screen
 @onready var slot_0 : Node2D = $Screen/Stage/Slot0
 
@@ -39,9 +43,23 @@ func _ready() -> void:
 		notepad.hide())
 	DialogueManager.dialogue_ended.connect(func(x): 
 		buttons_container.show()
-		notepad.show())
+		if !investigation_screen.visible: notepad.show())
+	
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(slot_0, "global_position", Vector2(320, 480), 0.5).from(Vector2(750, 480))
+	await tween.finished
 	
 	DialogueManager.show_dialogue_balloon(current_bachelor.dialogue, "start")
+
+func transition_out() -> void:
+	buttons_container.hide()
+	notepad.hide()
+	
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(slot_0, "global_position", Vector2(-200, 480), 0.5)
+	await tween.finished
+	
+	queue_free()
 
 func _on_ask_pressed() -> void:
 	initial_buttons_container.visible = false
@@ -68,6 +86,7 @@ func _on_ask_someone_else_pressed() -> void:
 		
 		var new_button : Button = _create_button()
 		new_button.icon = bachelor.icon
+		new_button.theme_type_variation = "AltButton"
 		
 		print(str(bachelor.id))
 		new_button.pressed.connect(_ask_question.bind(str(bachelor.id)))

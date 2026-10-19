@@ -116,4 +116,5 @@ El extraño te lleva al medio de un campo, y antes de que puedas decir algo al r
 ???: Y aparenta con el traer una emoción: ¡Tristeza!
 ???: BWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 El extraño sale corriendo de la habitación, dejando sus lagrimas verdes por todos lados.
+$> BachelorManager.reject_bachelor()
 => END

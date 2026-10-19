@@ -4,6 +4,134 @@
 [ext_resource type="Texture2D" uid="uid://bp72arq8ovhqa" path="res://assets/ui/bg_menu.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://crgn1h50ypk8v" path="res://assets/corazon_blanco.png" id="3_bqqt6"]
 
+[sub_resource type="Animation" id="Animation_8ln24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.08726646]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_oa1go"]
+resource_name = "unhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.08726646, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbmy8"]
+_data = {
+&"RESET": SubResource("Animation_8ln24"),
+&"hover": SubResource("Animation_rtw2f"),
+&"unhover": SubResource("Animation_oa1go")
+}
+
+[sub_resource type="Animation" id="Animation_bqqt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Background:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+resource_name = "slide"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Background:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ln24"]
+_data = {
+&"RESET": SubResource("Animation_bqqt6"),
+&"slide": SubResource("Animation_wu84c")
+}
+
 [node name="MainMenu" type="CanvasLayer" unique_id=1170951883]
 script = ExtResource("1_l6cm7")
 game_scene_path = "res://scenes/scenery.tscn"
@@ -16,7 +144,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=497727630]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1867509687]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13725491, 0.12156863, 0.11372549, 1)
+
+[node name="Background" type="TextureRect" parent="Control" unique_id=497727630]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -25,9 +162,10 @@ anchor_bottom = 1.0
 offset_top = -500.0
 grow_horizontal = 2
 grow_vertical = 0
+offset_transform_enabled = true
 texture = ExtResource("2_ekxnf")
 
-[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=599884108]
+[node name="GameLogo" type="TextureRect" parent="Control" unique_id=599884108]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -54,6 +192,17 @@ custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+offset_transform_enabled = true
+theme_type_variation = &"AltButton"
 text = "Empezar citas"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/MarginContainer/Start" unique_id=883047883]
+libraries/ = SubResource("AnimationLibrary_tbmy8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1962178809]
+libraries/ = SubResource("AnimationLibrary_8ln24")
+autoplay = &"slide"
+
+[connection signal="mouse_entered" from="Control/MarginContainer/Start" to="Control/MarginContainer/Start/AnimationPlayer" method="play" binds= [&"hover"]]
+[connection signal="mouse_exited" from="Control/MarginContainer/Start" to="Control/MarginContainer/Start/AnimationPlayer" method="play" binds= [&"unhover"]]
 [connection signal="pressed" from="Control/MarginContainer/Start" to="." method="_on_start_pressed"]

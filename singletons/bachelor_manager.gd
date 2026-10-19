@@ -146,5 +146,5 @@ func _create_decision_scene() -> void:
 
 func _delete_decision_scene() -> void:
 	if not current_decision_screen == null:
-				current_decision_screen.queue_free()
+				current_decision_screen.transition_out()
 				current_decision_screen = null

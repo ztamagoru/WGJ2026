@@ -1,9 +1,27 @@
 [gd_resource type="Theme" format=3 uid="uid://pprlkwkgk7cv"]
 
+[ext_resource type="Texture2D" uid="uid://xn2g5e2c23ku" path="res://assets/ui/Botones de pausa.png" id="1_c6xh3"]
 [ext_resource type="FontFile" uid="uid://cb4hh5bt0rf5i" path="res://assets/ui/Jersey25-Regular.ttf" id="1_j4jqe"]
 [ext_resource type="Texture2D" uid="uid://20tejkk6blvq" path="res://assets/ui/Botón actuar.png" id="2_c6xh3"]
 [ext_resource type="FontFile" uid="uid://bfngaqpot66e" path="res://assets/ui/Yuyu-Regular.ttf" id="3_t6dyh"]
 [ext_resource type="Texture2D" uid="uid://db6igewaabvea" path="res://assets/ui/Cuadro Diálogo neon.png" id="4_y2aw4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c6xh3"]
+load_path = "res://.godot/imported/Botones de pausa.png-31a4010ab953db0a00f4f0ac72243d1b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6dyh"]
+texture = SubResource("CompressedTexture2D_c6xh3")
+modulate_color = Color(0.728822, 0.728822, 0.728822, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qibe"]
+texture = ExtResource("1_c6xh3")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y2aw4"]
+load_path = "res://.godot/imported/Botones de pausa.png-31a4010ab953db0a00f4f0ac72243d1b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7yw46"]
+texture = SubResource("CompressedTexture2D_y2aw4")
+modulate_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coqoy"]
 texture = ExtResource("2_c6xh3")
@@ -18,6 +36,12 @@ texture = ExtResource("4_y2aw4")
 
 [resource]
 default_font = ExtResource("1_j4jqe")
+AltButton/base_type = &"Button"
+AltButton/colors/font_color = Color(0, 0, 0, 1)
+AltButton/colors/font_hover_color = Color(0.20511743, 0.20511743, 0.20511743, 1)
+AltButton/styles/hover = SubResource("StyleBoxTexture_t6dyh")
+AltButton/styles/normal = SubResource("StyleBoxTexture_0qibe")
+AltButton/styles/pressed = SubResource("StyleBoxTexture_7yw46")
 Button/fonts/font = ExtResource("1_j4jqe")
 Button/styles/focus = SubResource("StyleBoxTexture_coqoy")
 Button/styles/hover = SubResource("StyleBoxTexture_coqoy")

@@ -84,4 +84,4 @@ func _fade_ending_image() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if not showing_dialog: scene_manager.change_scene(main_menu, true)
+			if not showing_dialog: scene_manager.change_scene(main_menu)
